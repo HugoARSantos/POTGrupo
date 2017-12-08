@@ -15,7 +15,10 @@
 #include <string>
 #include <sstream>
 using namespace std;
-Formiga::Formiga() {
+Formiga::Formiga(int posx,int posy,int e_inicial) {
+    SetXY(posx,posy);
+    energia_inicial=e_inicial;
+    energia=e_inicial;
 }
 
 Formiga::Formiga(const Formiga& orig) {

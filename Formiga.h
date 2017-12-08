@@ -25,7 +25,7 @@ class Formiga {
         int energia;
         
 public:
-    Formiga();
+    Formiga(int posx,int posy,int e_inicial);
     int getX(){return x;}
     int getY(){return y;}
     void getEnergiaInicial(){return energia_inicial;}
@@ -33,10 +33,8 @@ public:
     string getAsString();
     
     
-    void SetX(int posx);
-    void SetY(int posy);
-    void SetEnergiaInicial();
-    void SetEnergia(int e);
+        void SetXY(int posx,int posy);
+        void SetEnergia(int e);
     
    
     Formiga(const Formiga& orig);
