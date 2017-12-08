@@ -14,12 +14,34 @@
 #ifndef FORMIGA_H
 #define FORMIGA_H
 
+
+using namespace std;
+
 class Formiga {
+    private:
+        int x;
+        int y;
+        int energia_inicial;
+        int energia;
+        
 public:
     Formiga();
+    int getX(){return x;}
+    int getY(){return y;}
+    void getEnergiaInicial(){return energia_inicial;}
+    void getEnergia(){return energia;}
+    string getAsString();
+    
+    
+    void SetX(int posx);
+    void SetY(int posy);
+    void SetEnergiaInicial();
+    void SetEnergia(int e);
+    
+   
     Formiga(const Formiga& orig);
     virtual ~Formiga();
-private:
+
 
 };
 
