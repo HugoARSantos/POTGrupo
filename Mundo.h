@@ -16,7 +16,7 @@
 
 class Mundo {
     int x;
-    
+    int matriz[x][x]={0};
 public:
     Mundo(int dim);
     void MostraMundo();

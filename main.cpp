@@ -13,14 +13,15 @@
 
 #include <cstdlib>
 #include "Mundo.h"
+#include "Formiga.h"
+#include <iostream>
 using namespace std;
 
 /*
  * 
  */
-int main(int argc, char** argv) {
-
-    Mundo(10);
-    Mundo.MostraMundo();
+int main() {
+    Formiga a(1,2,10);
+    cout << a.getAsString();
 }
 
