@@ -22,6 +22,7 @@ public:
     void MostraMundo();
     Mundo(const Mundo& orig);
     virtual ~Mundo();
+    int VerificaPosicao(int x,int y);
 private:
 
 };

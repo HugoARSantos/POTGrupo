@@ -31,6 +31,7 @@ public:
     int getEnergiaInicial(){return energia_inicial;}
     int getEnergia(){return energia;}
     string getAsString();
+    int Movformiga();
     
     
         void SetXY(int x,int y);
