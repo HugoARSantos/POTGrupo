@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Comandos.h</itemPath>
       <itemPath>Comunidade.h</itemPath>
       <itemPath>Formiga.h</itemPath>
       <itemPath>Mundo.h</itemPath>
@@ -16,6 +17,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Comandos.cpp</itemPath>
       <itemPath>Comunidade.cpp</itemPath>
       <itemPath>Formiga.cpp</itemPath>
       <itemPath>Mundo.cpp</itemPath>
@@ -44,6 +46,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Comandos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Comandos.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Comunidade.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Comunidade.h" ex="false" tool="3" flavor2="0">
@@ -83,6 +89,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Comandos.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Comandos.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Comunidade.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Comunidade.h" ex="false" tool="3" flavor2="0">

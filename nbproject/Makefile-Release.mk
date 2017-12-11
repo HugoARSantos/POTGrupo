@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Comandos.o \
 	${OBJECTDIR}/Comunidade.o \
 	${OBJECTDIR}/Formiga.o \
 	${OBJECTDIR}/Mundo.o \
@@ -60,11 +61,16 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootp.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootp.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootp ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Comandos.o: Comandos.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Comandos.o Comandos.cpp
 
 ${OBJECTDIR}/Comunidade.o: Comunidade.cpp
 	${MKDIR} -p ${OBJECTDIR}
