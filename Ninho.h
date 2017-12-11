@@ -14,6 +14,7 @@
 #ifndef NINHO_H
 #define NINHO_H
 #include <vector>
+using namespace std;
 class Formiga;
 class Ninho {
     private:

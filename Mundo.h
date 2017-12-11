@@ -15,8 +15,11 @@
 #define MUNDO_H
 
 class Mundo {
+    int x;
+    
 public:
-    Mundo();
+    Mundo(int dim);
+    void MostraMundo();
     Mundo(const Mundo& orig);
     virtual ~Mundo();
 private:

@@ -13,12 +13,23 @@
 
 #include "Mundo.h"
 
-Mundo::Mundo() {
+
+#include <iostream>
+Mundo::Mundo(int dim) {
+    x=dim;
+    
 }
 
 Mundo::Mundo(const Mundo& orig) {
 }
-
+void Mundo::MostraMundo(){
+int matriz[x][x]={1};
+for (int i=0;i<x;i++)
+   cout<<matriz[i][0];
+for(int j=0;j<x;j++){
+    cout<<matriz [0][j];
+}
+}
 Mundo::~Mundo() {
 }
 

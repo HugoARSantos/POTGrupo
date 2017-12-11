@@ -13,27 +13,27 @@
 
 #ifndef FORMIGA_H
 #define FORMIGA_H
-
+#include <string>
 
 using namespace std;
-
+class Ninho;
 class Formiga {
     private:
         int x;
         int y;
         int energia_inicial;
         int energia;
-        
+        const Ninho *n;
 public:
     Formiga(int posx,int posy,int e_inicial);
     int getX(){return x;}
     int getY(){return y;}
-    void getEnergiaInicial(){return energia_inicial;}
-    void getEnergia(){return energia;}
+    int getEnergiaInicial(){return energia_inicial;}
+    int getEnergia(){return energia;}
     string getAsString();
     
     
-        void SetXY(int posx,int posy);
+        void SetXY(int x,int y);
         void SetEnergia(int e);
     
    

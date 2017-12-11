@@ -12,7 +12,7 @@
  */
 
 #include <cstdlib>
-
+#include "Mundo.h"
 using namespace std;
 
 /*
@@ -20,6 +20,7 @@ using namespace std;
  */
 int main(int argc, char** argv) {
 
-    return 0;
+    Mundo(10);
+    Mundo.MostraMundo();
 }
 
