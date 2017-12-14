@@ -12,12 +12,12 @@ public:
     Comandos(const Comandos& orig);
     virtual ~Comandos();
     void defMundo(int i){}
-    void defEN(int i){}
-    void defPC(int i){}
-    void defVT(int i){}
-    void defMI(int i){}
-    void defME(int i){}
-    void defNM(int i){}
+    void defEnergia(int i){}
+    void defPercentagemCriarFormiga(int i){}
+    void defValorTransferencia(int i){}
+    void defMigalhasIniciais(int i){}
+    void defEnergiaMigalhas(int i){}
+    void defNumeroMigalhas(int i){}
     void executa(string ficheiro){}
     void inicio(){}
     
