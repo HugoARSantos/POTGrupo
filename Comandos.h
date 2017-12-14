@@ -6,6 +6,8 @@
 #ifndef COMANDOS_H
 #define COMANDOS_H
 
+using namespace std;
+
 class Comandos {
 public:
     Comandos();
