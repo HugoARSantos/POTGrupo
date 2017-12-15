@@ -8,9 +8,8 @@
 #include "Ninho.h"
 #include <vector>
 class Mundo {
-    int x;
-    int matriz[x][x]={0};
-    vector<*Ninho> ninhos;
+ 
+    vector<Ninho *> ninhos;
 
 public:
     Mundo(int dim);

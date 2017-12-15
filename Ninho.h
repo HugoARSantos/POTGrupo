@@ -6,8 +6,9 @@
 #ifndef NINHO_H
 #define NINHO_H
 #include <vector>
+#include "Formiga.h"
 using namespace std;
-class Formiga;
+
 class Ninho {
     private:
         int id;

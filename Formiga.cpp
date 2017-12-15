@@ -7,13 +7,8 @@
 #include <string>
 #include <sstream>
 using namespace std;
-Formiga::Formiga(int i,int posx,int posy,int e_inicial,int rv, int rm,const Ninho & n):ninho(n) {
-//    SetXY(posx,posy);
-    id=i;
-    energia_inicial=e_inicial;
-    energia=e_inicial;
-    
-}
+
+
 
 Formiga::Formiga(const Formiga& orig) {
 }

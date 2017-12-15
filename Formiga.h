@@ -21,7 +21,7 @@ class Formiga {
         int raio_movimento;
      
 public:
-    Formiga(int i,int posx,int posy,int e_inicial,int rv,int rm,const Ninho & n);
+    Formiga(int i,int posx,int posy,const Ninho & n):id(i),ninho(&n){};
     int getX(){return x;}
     int getY(){return y;}
     int getEnergiaInicial(){return energia_inicial;}
