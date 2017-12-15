@@ -8,7 +8,7 @@
 
 #include <iostream>
 Mundo::Mundo(int dim) {
-    x=dim;
+//    x=dim;
     
 }
 
@@ -18,9 +18,9 @@ void Mundo::MostraMundo(){
 
 }
 int Mundo::VerificaPosicao(int x, int y){
-    if(matriz[x][y]==0){
-        return 1;
-    }
+//    if(matriz[x][y]==0){
+//        return 1;
+//    }
     return 0;
     }
 

@@ -36,7 +36,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Comandos.o \
-	${OBJECTDIR}/Comunidade.o \
 	${OBJECTDIR}/Formiga.o \
 	${OBJECTDIR}/Mundo.o \
 	${OBJECTDIR}/Ninho.o \
@@ -71,11 +70,6 @@ ${OBJECTDIR}/Comandos.o: Comandos.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Comandos.o Comandos.cpp
-
-${OBJECTDIR}/Comunidade.o: Comunidade.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Comunidade.o Comunidade.cpp
 
 ${OBJECTDIR}/Formiga.o: Formiga.cpp
 	${MKDIR} -p ${OBJECTDIR}

@@ -4,18 +4,15 @@
  */
 
 #include "Comandos.h"
-
-using namespace std;
         
-        
-Comandos::Comandos() {
+Comandos::Comandos(){
 }
-Comandos::Comandos(const Comandos& orig) {
-}
-Comandos::~Comandos() {
-}
+Comandos::Comandos(const Comandos& orig){
+};
+Comandos::~Comandos(){
+};
 
-void Comandos:: defMundo(int i){
+void Comandos :: defMundo(int i){
     lim = i;
 }
 
@@ -26,18 +23,18 @@ void Comandos:: defEnergia(int i){   //defen Energia dos ninhos quando são cria
 void Comandos::defPercentagemCriarFormiga(int i){   //defpc
     transferencia = i;               
 }                               
-void defValorTransferencia(int i){   //defvt
+void Comandos::defValorTransferencia(int i){   //defvt
     transferir = i;               
 }                               
-void defMigalhasIniciais(int i){   //defmi 0 a 100
-    if (i>= && i <=100)
+void Comandos::defMigalhasIniciais(int i){   //defmi 0 a 100
+    if (i >= 0 && i <=100)
         percentagem = i;
 }                               
-void defEnergiaMigalhas(int i){   //defme
+void Comandos::defEnergiaMigalhas(int i){   //defme
     menergia = i;              
 }                               
-void defNunmeroMigalhas(int i){   //defNM
-    mmigalhas = i;                //valor de migalhas criadas a cada 
+void Comandos::defNumeroMigalhas(int i){   //defNM
+    nmigalhas = i;                //valor de migalhas criadas a cada 
 }                                 //instance varia entre 0 e este valor
 
 void executa(string ficheiro){}

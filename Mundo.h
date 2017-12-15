@@ -7,8 +7,8 @@
 #define MUNDO_H
 
 class Mundo {
-    int x;
-    int matriz[x][x]={0};
+    //int x;
+    //int matriz[x][x]={0};
 public:
     Mundo(int dim);
     void MostraMundo();
