@@ -12,11 +12,11 @@ Comandos::Comandos(const Comandos& orig){
 Comandos::~Comandos(){
 };
 
-void Comandos :: defMundo(int i){
+void Comandos ::defMundo(int i){
     lim = i;
 }
 
-void Comandos:: defEnergia(int i){   //defen Energia dos ninhos quando são criados pode
+void Comandos::defEnergia(int i){   //defen Energia dos ninhos quando são criados pode
     nenergia = i;                     //ser alterado durante a simulação por isso
 }                                     //é diferente de energia inicial dos ninhos
 

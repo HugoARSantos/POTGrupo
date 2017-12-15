@@ -26,6 +26,7 @@ public:
     Comandos();
     Comandos(const Comandos& orig);
     virtual ~Comandos();
+    
     void defMundo(int i);
     void defEnergia(int i);
     void defPercentagemCriarFormiga(int i);

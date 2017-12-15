@@ -16,25 +16,24 @@ using namespace std;
 int main() {
     string op;
     int i,j,k,l;
-    Comandos consola();
-   /* i = NULL; j = NULL, k = NULL, l = NULL;
+    Comandos consola;
     cout << "Introduza um comando: ";
-    getline(cin,op, i);   
+    getline(cin, op);   
     
     if (op == "defmundo")
-        if (i != NULL)
+        //if (i != NULL)
             consola.defMundo(i);
 
     if (op == "defen")
-        if (i != NULL)
+        //if (i != NULL)
             consola.defEnergia(i);
         
     if (op == "defpc")
-        if (i != NULL)
+        //if (i != NULL)
             consola.defPercentagemCriarFormiga(i);
     
     if (op == "defvt")
-        if (i != NULL)
-            consola.defValorTransferencia(i);*/
+        //if (i != NULL)
+            consola.defValorTransferencia(i);
 }
 
