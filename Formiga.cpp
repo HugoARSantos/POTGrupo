@@ -10,8 +10,7 @@ using namespace std;
 
 
 
-Formiga::Formiga(const Formiga& orig) {
-}
+
 
 Formiga::~Formiga() {
 }

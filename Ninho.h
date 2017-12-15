@@ -7,6 +7,7 @@
 #define NINHO_H
 #include <vector>
 #include "Formiga.h"
+
 using namespace std;
 
 class Ninho {
@@ -23,9 +24,10 @@ class Ninho {
 public:
     Ninho();
     bool acrescentaFormiga(Formiga * formiga);
+    bool removerFormiga(int idd);
     Ninho(const Ninho& orig);
     virtual ~Ninho();
-
+    string getAsString()const;
 
 };
 

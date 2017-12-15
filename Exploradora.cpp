@@ -12,12 +12,9 @@
  */
 
 #include "Exploradora.h"
+#include "Formiga.h"
 
-Exploradora::Exploradora(int i,int posx,int posy,const Ninho & n):Formiga(i,posx,posy,200,10,8,n){
-}
 
-Exploradora::Exploradora(const Exploradora& orig) {
-}
 
 Exploradora::~Exploradora() {
 }
