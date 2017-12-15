@@ -22,7 +22,7 @@ class Ninho {
         int pesquisa(int idd)const;
 public:
     Ninho();
-    
+    bool acrescentaFormiga(Formiga * formiga);
     Ninho(const Ninho& orig);
     virtual ~Ninho();
 

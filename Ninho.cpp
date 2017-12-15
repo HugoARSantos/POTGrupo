@@ -15,7 +15,13 @@ int Ninho::pesquisa(int idd) const{
         }
     return -1;
 }
-
+bool Ninho::acrescentaFormiga(Formiga * formiga) {
+    if (formiga == nullptr || pesquisa(formiga->getId()) != -1){
+        return false;}
+     
+    formigas.push_back(formiga);
+    return true;
+}
 
     
 Ninho::Ninho(const Ninho& orig) {
