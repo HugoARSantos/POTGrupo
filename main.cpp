@@ -17,8 +17,8 @@ int main() {
     string op;
     int i,j,k,l;
     Comandos consola();
-    i = NULL; j = NULL, k = NULL, l = NULL;
-    cout >> "Introduza um comando: ";
+   /* i = NULL; j = NULL, k = NULL, l = NULL;
+    cout << "Introduza um comando: ";
     getline(cin,op, i);   
     
     if (op == "defmundo")
@@ -35,6 +35,6 @@ int main() {
     
     if (op == "defvt")
         if (i != NULL)
-            consola.defValorTransferencia(i);
+            consola.defValorTransferencia(i);*/
 }
 
