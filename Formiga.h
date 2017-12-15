@@ -11,18 +11,23 @@ using namespace std;
 class Ninho;
 class Formiga {
     private:
+        int id;
         int x;
         int y;
         int energia_inicial;
         int energia;
-        const Ninho *n;
+        const Ninho * ninho;
+        int raio_visao;
+        int raio_movimento;
+     
 public:
-    Formiga(int posx,int posy,int e_inicial);
+    Formiga(int i,int posx,int posy,int e_inicial,int rv,int rm,const Ninho & n);
     int getX(){return x;}
     int getY(){return y;}
     int getEnergiaInicial(){return energia_inicial;}
     int getEnergia(){return energia;}
-    string getAsString();
+    int getId()const{return id;};
+    virtual string getAsString()const;
     int Movformiga();
     
     
