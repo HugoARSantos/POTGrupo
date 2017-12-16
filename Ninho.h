@@ -25,6 +25,8 @@ public:
     Ninho();
     bool acrescentaFormiga(Formiga * formiga);
     bool removerFormiga(int idd);
+    int getX(){return x;}
+    int getY(){return y;}
     Ninho(const Ninho& orig);
     virtual ~Ninho();
     string getAsString()const;

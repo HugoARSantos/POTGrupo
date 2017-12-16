@@ -4,7 +4,9 @@
  */
 
 #include "Mundo.h"
-
+#include "Exploradora.h"
+#include "Formiga.h"
+#include "Ninho.h"
 
 #include <iostream>
 Mundo::Mundo(int dim) {
@@ -17,12 +19,20 @@ Mundo::Mundo(const Mundo& orig) {
 void Mundo::MostraMundo(){
 
 }
-int Mundo::VerificaPosicao(int x, int y){
-//    if(matriz[x][y]==0){
-//        return 1;
-//    }
-    return 0;
-    }
+int Mundo::VerificaPosicao(int xx, int yy){
 
+//    if(matriz[xx][yy]==NULL){
+//        return 1;}
+//    else
+//        
+//    return -1;
+}
+void Mundo::preencheMatriz(){
+    for(unsigned int i =0;i<ninhos.size();i++){
+   
+    }
+}
 Mundo::~Mundo() {
 }
+
+

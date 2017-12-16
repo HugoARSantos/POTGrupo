@@ -7,16 +7,20 @@
 #define MUNDO_H
 #include "Ninho.h"
 #include <vector>
-class Mundo {
- 
-    vector<Ninho *> ninhos;
 
+class Mundo {
+    
+    
+    vector<Ninho *> ninhos;
+    
 public:
+    
     Mundo(int dim);
     void MostraMundo();
     Mundo(const Mundo& orig);
+    void preencheMatriz();
     virtual ~Mundo();
-    int VerificaPosicao(int x,int y);
+    int VerificaPosicao(int xx,int yy);
 private:
 
 };
