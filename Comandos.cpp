@@ -181,10 +181,10 @@ int Comandos::simulacao(){
     istringstream iss(op);
     iss >> op;        
     if (op == "1")
-        return 0;
+        return 1;
     
     if (op == "2")
-        return 1;                     
+        return 0;                     
     }while (run == true);
     return 0;
 }

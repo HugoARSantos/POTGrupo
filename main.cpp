@@ -8,8 +8,15 @@
 
 int main() {
     Comandos consola;
+    bool run = true;
+    do{
     if (consola.configuracao() == 1)
-        consola.simulacao();
-    
+    {
+        if(consola.simulacao() == 1)
+            run = false;
+    }
+    else
+        run = false;
+    }while (run == true);
 }
 
