@@ -11,7 +11,7 @@
 class Mundo {
     
     
-    vector<Ninho *> ninhos;
+    //vector<Ninho *> ninhos;
     
 public:
     

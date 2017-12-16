@@ -28,9 +28,9 @@ int Mundo::VerificaPosicao(int xx, int yy){
 //    return -1;
 }
 void Mundo::preencheMatriz(){
-    for(unsigned int i =0;i<ninhos.size();i++){
+    //for(unsigned int i =0;i<ninhos.size();i++){
    
-    }
+    //}
 }
 Mundo::~Mundo() {
 }
