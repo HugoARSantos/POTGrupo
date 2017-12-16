@@ -18,8 +18,8 @@ class Exploradora: public Formiga {
     private:
         
 public:
-   // Exploradora(int ii,int posxx,int posyy,const Ninho & nn):Formiga(ii,posxx,posyy,&nn){};
-    Exploradora(const Exploradora& orig);
+    Exploradora(int ii,int posxx,int posyy,const Ninho & nn);
+    //Exploradora(const Exploradora& orig);
     virtual ~Exploradora();
 
 

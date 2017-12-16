@@ -6,6 +6,7 @@
 #include "Formiga.h"
 #include <string>
 #include <sstream>
+#include <stdlib.h>
 using namespace std;
 
 
@@ -21,4 +22,13 @@ string Formiga ::  getAsString()const{
 }
 int Formiga::Movformiga(){
     
+}
+Formiga :: Formiga(const Formiga & orig){
+}
+void Formiga :: removeEnergia(){
+    energia--;
+}
+void Formiga :: regraPasseia(){
+    x +=rand()% (raio_movimento*2+1) - raio_movimento;
+    y += rand()%(raio_movimento*2+1) -raio_movimento;
 }
