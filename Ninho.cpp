@@ -47,7 +47,14 @@ string Ninho::getAsString() const {
 
     return oss.str();
 }
-
+int Ninho ::retornaPosxy(int z, bool j){
+    for(unsigned int i=0;i<formigas.size();i++){
+        if(i==z && j==0)
+            return formigas[i]->getX();
+        else if(i==z && j==1)
+            return formigas[i]->getY();
+    }
+}
 Ninho::~Ninho() {
 }
 void Ninho::retiraEnergia(){

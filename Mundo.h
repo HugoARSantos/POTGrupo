@@ -7,15 +7,16 @@
 #define MUNDO_H
 #include "Ninho.h"
 #include <vector>
-
+class Formiga;
 class Mundo {
     
     
-    //vector<Ninho *> ninhos;
+    vector<Ninho *> ninhos;
+    int tab[10][10]={0};
     
 public:
     
-    Mundo(int dim);
+    Mundo(int dim){};
     void MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();

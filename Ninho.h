@@ -27,6 +27,8 @@ public:
     bool removerFormiga(int idd);
     int getX(){return x;}
     int getY(){return y;}
+    int gettamanhoVetor()const{return formigas.size();}
+    int  retornaPosxy(int z,bool j);
     Ninho(const Ninho& orig);
     virtual ~Ninho();
     string getAsString()const;
