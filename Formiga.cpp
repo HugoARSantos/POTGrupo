@@ -9,7 +9,7 @@
 #include <stdlib.h>
 using namespace std;
 
-
+int Formiga::sequencia=1;
 
 
 
@@ -20,15 +20,20 @@ string Formiga ::  getAsString()const{
     oss << "posX\n"<<x<<"\n"<<"posY\n"<<y<<"\n"<<"Energia inicial\n"<<energia_inicial<<"\n"<<"energia atual\n"<<energia;
     return oss.str();
 }
-int Formiga::Movformiga(){
-    
-}
+
 Formiga :: Formiga(const Formiga & orig){
 }
-void Formiga :: removeEnergia(){
-    energia--;
+void Formiga :: removeEnergia(int mv){
+    energia=energia-(1+mv);
 }
-void Formiga :: regraPasseia(){
-    x +=rand()% (raio_movimento*2+1) - raio_movimento;
-    y += rand()%(raio_movimento*2+1) -raio_movimento;
+int Formiga :: regraPasseia(){
+    int auxx=rand()% (raio_movimento*2+1) - raio_movimento;
+    int auxy=rand()%(raio_movimento*2+1) -raio_movimento;
+    int mv=abs(x-auxx)+abs(y-auxy);
+    x +=auxx;
+    y += auxy;
+    return mv;
+}
+void Formiga::Settipo(char c){
+    tipo=c;
 }

@@ -28,7 +28,7 @@ public:
     Ninho(const Ninho& orig);
     virtual ~Ninho();
     string getAsString()const;
-
+    void retiraEnergia();
 };
 
 #endif /* NINHO_H */

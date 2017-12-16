@@ -11,7 +11,7 @@ using namespace std;
 class Ninho;
 class Formiga {
     private:
-        char c;
+        char tipo;
         int id;
         int x;
         int y;
@@ -20,9 +20,14 @@ class Formiga {
         const Ninho * ninho;
         int raio_visao;
         int raio_movimento;
-     
+        static int sequencia;
 public:
-    Formiga(int i,int posx,int posy,const Ninho & n,int e=0,int rv=0,int rm=0):id(i),ninho(&n),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm){};
+    Formiga(int i,int posx,int posy,const Ninho & n,int e=0,int rv=0,int rm=0)
+    :ninho(&n),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm){
+             id=sequencia;
+        sequencia++;}
+        
+    
     Formiga(const Formiga & orig);
     int getX(){return x;}
     int getY(){return y;}
@@ -30,14 +35,14 @@ public:
     int getEnergia(){return energia;}
     int getId()const{return id;};
     virtual string getAsString()const;
-    int Movformiga();
     
     
+    void Settipo(const char  c);
         void SetXY(int x,int y);
         void SetEnergia(int e);
-        void removeEnergia();
+        void removeEnergia(int mv);
    
-        void regraPasseia();
+        int regraPasseia();
     
     virtual ~Formiga();
 

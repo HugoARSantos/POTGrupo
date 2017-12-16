@@ -50,5 +50,7 @@ string Ninho::getAsString() const {
 
 Ninho::~Ninho() {
 }
-
+void Ninho::retiraEnergia(){
+    energia--;
+}
 
