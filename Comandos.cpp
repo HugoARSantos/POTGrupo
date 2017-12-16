@@ -12,31 +12,179 @@ Comandos::Comandos(const Comandos& orig){
 Comandos::~Comandos(){
 };
 
+int Comandos :: configuracao(){
+    string op,nficheiro;
+    bool run = true;
+    int i, j, k, l ;
+    lim = -1;                     
+    nenergia = -1;                
+    menergia = -1;                
+    energianovaformiga = -1;          
+    transferir = 1;              
+    percentagem = -1;             
+    nmigalhas = -1;  
+    
+    do{
+    i = -1, j = -1, k = -1, l = -1;
+    cout << "Introduza um comando: ";
+    getline(cin, op);   
+    
+    istringstream iss(op);
+    iss >> op;
+    
+    if (op == "defmundo"){
+        iss >> i;
+            defMundo(i);
+    }
+    
+    if (op == "defen"){
+        iss >> i;
+            defEnergia(i);
+    }
+    
+    if (op == "defpc"){
+        iss >> i;
+            defPercentagemCriarFormiga(i);
+    }
+    if (op == "defvt"){
+        iss >> i;
+            defValorTransferencia(i);
+    }
+    
+    if (op == "defmi"){
+        iss >> i;
+            defMigalhasIniciais(i);
+    }
+    
+    if (op == "defme"){
+        iss >> i;
+            defEnergiaMigalhas(i);
+    }
+    
+    if (op == "defnm"){
+        iss >> i;
+            defNumeroMigalhas(i);
+    }
+    
+    if (op == "executa"){
+        iss >> nficheiro;
+    }
+    
+     if (op == "inicio"){
+         if (inicio() == 1)
+             return 1;
+    }
+    
+    if (op == "sair"){
+        run = false;
+    }
+    }while (run == true);
+    return 0;
+}
+
+
+
 void Comandos ::defMundo(int i){
-    lim = i;
+    if (i<10)
+        cout << "Introduza um valor apropiado para o limite do mundo(Acima de 10)." << endl;
+    else{
+        lim = i;
+        cout << "Limite do mundo definido com: " << lim << "." << endl;
+    }
 }
 
 void Comandos::defEnergia(int i){   //defen Energia dos ninhos quando são criados pode
-    nenergia = i;                     //ser alterado durante a simulação por isso
-}                                     //é diferente de energia inicial dos ninhos
+    if (i < 1) 
+        cout << "Introduza um valor apropiado "
+                "para a energia dos ninhos (Acima de 0)." << endl;
+    else{                            //ser alterado durante a simulação por isso
+        nenergia = i;    
+        cout << "A energia dos novos ninhos e: " << nenergia << "." << endl;
+    }
+}                                   //é diferente de energia inicial dos ninhos
 
 void Comandos::defPercentagemCriarFormiga(int i){   //defpc
-    transferencia = i;               
+    if (i >= 0 && i <= 100){
+        energianovaformiga = i;  
+        cout << "Os ninhos vao criar uma formiga assim que tiverem: " 
+            << energianovaformiga << "% de energia acima do valor inicial." << endl;
+    }
+    else{
+        cout << "Introduza um valor apropiado para a energia com a qual o ninho "
+                "pode criar uma nova formiga(Entre 0 e 100)." << endl;
+    }            
 }                               
 void Comandos::defValorTransferencia(int i){   //defvt
-    transferir = i;               
-}                               
+        if (i < 1) 
+        cout << "Introduza um valor apropiado "
+                "para a energia transferida do ninho para a formiga." << endl;
+    else{                            
+        transferir = i;    
+        cout << "Os ninhos vao transferir: " << transferir << " unidades de energia por iteracao." << endl;
+    }
+}                                             
+                               
 void Comandos::defMigalhasIniciais(int i){   //defmi 0 a 100
-    if (i >= 0 && i <=100)
+    if (i >= 0 && i <=100){
         percentagem = i;
-}                               
+            cout << "No incio da simulacao as migalhas irao ocupar: " 
+            << percentagem << "% das posicoes vazias." << endl;
+    }
+    else{
+        cout << "Introduza um valor apropiado para a percentagem "
+                "de celulas vazias ocupadas por migalhas(Entre 0 e 100)." << endl;
+    }
+}
 void Comandos::defEnergiaMigalhas(int i){   //defme
-    menergia = i;              
-}                               
-void Comandos::defNumeroMigalhas(int i){   //defNM
-    nmigalhas = i;                //valor de migalhas criadas a cada 
+    if (i<1)
+        cout << "Introduza a energiad das migalhas(Acima de 0)." << endl;
+    else{
+        menergia = i;
+        cout << "A energia de novas migalhas e: " << menergia << "." << endl;              
+        }
+}
+
+void Comandos::defNumeroMigalhas(int i){   //defnm
+     if (i<1)
+        cout << "Introduza um valor apropiado maximo de migalhas criadas a cada instante.(Acima de 0)" << endl;
+    else{
+        nmigalhas = i;
+        cout << "A cada interacao serao criadas entre 0 a " << nmigalhas << " migalhas." << endl;              
+    }                              //valor de migalhas criadas a cada 
 }                                 //instance varia entre 0 e este valor
 
-void executa(string ficheiro){}
+void Comandos::executa(string ficheiro){}
 
-void inicio(){}
+int Comandos::inicio(){
+         if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
+             && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
+         return 1;
+         else{
+             if (lim<10) cout <<"Limite do mundo nao definido" << endl;
+             if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
+             if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
+             if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
+             if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
+             if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
+             if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
+             return 0;
+         }
+}
+
+int Comandos::simulacao(){
+    string op;
+    bool run = true;
+    cout << "Simulacao iniciada com sucesso, pressione 1 para sair, 2 para voltar a configuracao.";
+    do{
+    getline(cin, op);
+    
+    istringstream iss(op);
+    iss >> op;        
+    if (op == "1")
+        return 0;
+    
+    if (op == "2")
+        return 1;                     
+    }while (run == true);
+    return 0;
+}

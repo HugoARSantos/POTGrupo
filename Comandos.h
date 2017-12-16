@@ -6,9 +6,13 @@
 #ifndef COMANDOS_H
 #define COMANDOS_H
 
+#include "Mundo.h"
+#include "Ninho.h"
+#include "Formiga.h"
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -17,16 +21,16 @@ public:
     int lim;                     //Limite do mundo, não pode ser alterado durante a simulação
     int nenergia;                //Energia inicial dos ninhos
     int menergia;                //Energia inicial das migalhas
-    int transferencia;           //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
+    int energianovaformiga;           //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
     int transferir;              //Unidade de energia transferida entre ninho e formiga por iteração
     int percentagem;             //Posiçoes vazias ocupadas por migalhas ao inicio
-    int nmigalhas;               //maximo de migalhas criadas a cada instance
-    int idNinho;             
+    int nmigalhas;               //maximo de migalhas criadas a cada instance            
 
     Comandos();
     Comandos(const Comandos& orig);
     virtual ~Comandos();
     
+    int configuracao();
     void defMundo(int i);
     void defEnergia(int i);
     void defPercentagemCriarFormiga(int i);
@@ -35,8 +39,9 @@ public:
     void defEnergiaMigalhas(int i);
     void defNumeroMigalhas(int i);
     void executa(string ficheiro);
-    void inicio();
+    int inicio();
     
+    int simulacao();
     void criaNinho(int i,int j);
     void criaFormigas(int i, int j, int k);
     void criaFor(int i, int j, int k, int l);
