@@ -14,7 +14,7 @@
 #include "Exploradora.h"
 #include "Formiga.h"
 
-Exploradora::Exploradora(int ii,int posxx,int posyy,char cc,const Ninho &nn):Formiga(ii,posxx,posyy,cc,nn,200,10,8){
+Exploradora::Exploradora(int ii,int posxx,int posyy,string cc,const Ninho &nn):Formiga(ii,posxx,posyy,cc,nn,200,10,8){
     
 };
 

@@ -11,7 +11,7 @@ using namespace std;
 class Ninho;
 class Formiga {
     private:
-        char tipo;
+        string tipo;
         int id;
         int x;
         int y;
@@ -22,7 +22,7 @@ class Formiga {
         int raio_movimento;
         static int sequencia;
 public:
-    Formiga(int i,int posx,int posy,char t,const Ninho & n,int e=0,int rv=0,int rm=0)
+    Formiga(int i,int posx,int posy,string t,const Ninho & n,int e=0,int rv=0,int rm=0)
     :ninho(&n),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(t){
              id=sequencia;
         sequencia++;}
