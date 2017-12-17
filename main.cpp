@@ -11,17 +11,14 @@
 #include "Formiga.h"
 #include <string>
 #include <iostream>
-
+#include "teste.h"
 using namespace std;
 
 int main() {
+    teste t;
+    t.testar();
     Comandos consola;
-    bool a;
-//    Mundo m(15);
-//    Ninho n(5,7,3,&m);
-//    Exploradora ex(5,5,&n);
-//    a = n.acrescentaFormiga(&ex);
-//    cout << n.getAsString();
+    
     bool run = true;
     do{
     if (consola.configuracao() == 1)

@@ -41,7 +41,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Mundo.o \
 	${OBJECTDIR}/Ninho.o \
 	${OBJECTDIR}/Simulacao.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/teste.o
 
 
 # C Compiler Flags
@@ -62,11 +63,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootp.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootp.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootp ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/Comandos.o: Comandos.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -102,6 +103,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/teste.o: teste.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/teste.o teste.cpp
 
 # Subprojects
 .build-subprojects:
