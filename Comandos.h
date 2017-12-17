@@ -40,7 +40,7 @@ public:
     void defMigalhasIniciais(int i);
     void defEnergiaMigalhas(int i);
     void defNumeroMigalhas(int i);
-    int executa(string ficheiro);
+    void executa(string ficheiro);
     int inicio();
 
     int simulacao();

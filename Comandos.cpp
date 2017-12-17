@@ -66,11 +66,10 @@ int Comandos :: configuracao(){
         defNumeroMigalhas(i);
     }
     
-   /* else if (op == "executa"){
+    else if (op == "executa"){
         iss >> nficheiro;
-        if (executa(nficheiro) == 1)
-            return 1;
-    }*/
+        executa(nficheiro);
+    }
     
     else if (op == "inicio"){
          if (inicio() == 1)
@@ -159,27 +158,13 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
     }                              //valor de migalhas criadas a cada 
 }                                 //instance varia entre 0 e este valor
 
-/*int Comandos::executa(string ficheiro){
-    string value;
-    int i;
-    ifstream fi(ficheiro);
-    fi.open(ficheiro);
-    getline(fi,value);
-    istringstream iss(value);
-    cout << value << endl;
-    iss >> i;
-    lim = i;
-    iss >> i;
-    nenergia = i;
-    iss >> menergia;
-    iss >> energianovaformiga;
-    iss >> transferir;
-    iss >> percentagem;
-    iss >> nmigalhas;
+void Comandos::executa(string ficheiro){
+    ifstream fi;
     
     if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
        && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
-        return 1;
+        cout << "Ola";
+        //return 1;
     else{
         if (lim<10) cout <<"Limite do mundo nao definido" << endl;
         if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
@@ -190,7 +175,7 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
         if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
         //return 0;
     }
-}*/
+}
 
 int Comandos::inicio(){
     if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
