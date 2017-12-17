@@ -59,6 +59,7 @@ int Ninho ::retornaPosxy(int z, bool j){
     }
 }
 Ninho::~Ninho() {
+    
 }
 void Ninho::retiraEnergia(){
     energia--;

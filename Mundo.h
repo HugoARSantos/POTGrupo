@@ -21,6 +21,7 @@ public:
     void MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();
+    int getNninhos(){return ninhos.size();};
     virtual ~Mundo();
     int VerificaPosicao(int xx,int yy);
     string getAsString()const;
