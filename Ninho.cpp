@@ -7,7 +7,7 @@
 #include <sstream>
 using namespace std;
 int Ninho::sequencia=1;
-Ninho::Ninho(int xx,int yy,int e) {
+Ninho::Ninho(int xx,int yy,int e,const Mundo * m):mundo(m) {
     x=xx;
     y=yy;
     energia_inicial=energia=e;
