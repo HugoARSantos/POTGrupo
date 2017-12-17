@@ -31,7 +31,7 @@ Simulacao::~Simulacao() {
 }
 
 int Simulacao::simula(){
-   /* string op,nficheiro;
+    string op,nficheiro;
     string a,b,c;
     int i, j, k, l ;
     bool run = true;
@@ -71,10 +71,10 @@ int Simulacao::simula(){
         defNumeroMigalhas(i);
     }
     
-    else if (op == "executa"){
+    /*else if (op == "executa"){
         iss >> nficheiro;
         executa(nficheiro);
-    }
+    }*/
     
     else if (op == "sair"){
         return 0;
@@ -109,7 +109,10 @@ int Simulacao::simula(){
         listaPosicao(i,j);
     }
     
-    }while (run == true);*/
+    else 
+        cout << "Por favor introduza um comando valido" << endl;
+    
+    }while (run == true);
     return 0;
 }
 
@@ -119,7 +122,7 @@ void Simulacao::criaNinho(int i, int j){
     if (j<0 || j >= lim)
         cout << "Coluna invalida" << endl;
     if (i>=0 && i < lim && j>=0 && j < lim)
-        //Cria ninho nesta posicao
+        //Ninho n(i,j,nenergia,&m);
         cout << "Ninho criado em X:" << i << " Y:" <<j << endl;
 }
 
@@ -159,3 +162,92 @@ void Simulacao::listaPosicao(int i, int j){
         //Cria ninho nesta posicao
         cout << "Na posicao X:" << i << " Y:" <<j << " existe: "<< endl;
 }
+
+void Simulacao::defEnergia(int i){   //defen Energia dos ninhos quando são criados pode
+    if (i < 1) 
+        cout << "Introduza um valor apropiado "
+                "para a energia dos ninhos (Acima de 0)." << endl;
+    else{                            //ser alterado durante a simulação por isso
+        nenergia = i;    
+        cout << "A energia dos novos ninhos e: " << nenergia << "." << endl;
+    }
+}                                   //é diferente de energia inicial dos ninhos
+
+void Simulacao::defPercentagemCriarFormiga(int i){   //defpc
+    if (i >= 0 && i <= 100){
+        energianovaformiga = i;  
+        cout << "Os ninhos vao criar uma formiga assim que tiverem: " 
+            << energianovaformiga << "% de energia acima do valor inicial." << endl;
+    }
+    else{
+        cout << "Introduza um valor apropiado para a energia com a qual o ninho "
+                "pode criar uma nova formiga(Entre 0 e 100)." << endl;
+    }            
+}                               
+void Simulacao::defValorTransferencia(int i){   //defvt
+        if (i < 1) 
+        cout << "Introduza um valor apropiado "
+                "para a energia transferida do ninho para a formiga." << endl;
+    else{                            
+        transferir = i;    
+        cout << "Os ninhos vao transferir: " << transferir << " unidades de energia por iteracao." << endl;
+    }
+}                                             
+                               
+void Simulacao::defMigalhasIniciais(int i){   //defmi 0 a 100
+    if (i >= 0 && i <=100){
+        percentagem = i;
+            cout << "No incio da simulacao as migalhas irao ocupar: " 
+            << percentagem << "% das posicoes vazias." << endl;
+    }
+    else{
+        cout << "Introduza um valor apropiado para a percentagem "
+                "de celulas vazias ocupadas por migalhas(Entre 0 e 100)." << endl;
+    }
+}
+void Simulacao::defEnergiaMigalhas(int i){   //defme
+    if (i<1)
+        cout << "Introduza a energiad das migalhas(Acima de 0)." << endl;
+    else{
+        menergia = i;
+        cout << "A energia de novas migalhas e: " << menergia << "." << endl;              
+        }
+}
+
+void Simulacao::defNumeroMigalhas(int i){   //defnm
+     if (i<1)
+        cout << "Introduza um valor apropiado maximo de migalhas criadas a cada instante.(Acima de 0)" << endl;
+    else{
+        nmigalhas = i;
+        cout << "A cada interacao serao criadas entre 0 a " << nmigalhas << " migalhas." << endl;              
+    }                              //valor de migalhas criadas a cada 
+}                                 //instance varia entre 0 e este valor
+
+/*int Simulacao::executa(string ficheiro){
+    string value;
+    ifstream fi(ficheiro);
+    getline(fi,value);
+    istringstream iss(value);
+    iss >> lim;
+    iss >> nenergia;
+    iss >> menergia;
+    iss >> energianovaformiga;
+    iss >> transferir;
+    iss >> percentagem;
+    iss >> nmigalhas;
+    
+    if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
+       && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
+        cout << "Ola";
+        //return 1;
+    else{
+        if (lim<10) cout <<"Limite do mundo nao definido" << endl;
+        if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
+        if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
+        if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
+        if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
+        if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
+        if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
+        //return 0;
+    }
+}*/

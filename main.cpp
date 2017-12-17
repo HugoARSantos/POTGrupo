@@ -16,12 +16,12 @@ using namespace std;
 
 int main() {
     Comandos consola;
-    bool a;
-    Mundo m(15);
-    Ninho n(5,7,3,&m);
-    Exploradora ex(5,5,&n);
-    a = n.acrescentaFormiga(&ex);
-    cout << n.getAsString();
+//    bool a;
+//    Mundo m(15);
+//    Ninho n(5,7,3,&m);
+//    Exploradora ex(5,5,&n);
+//    a = n.acrescentaFormiga(&ex);
+//    cout << n.getAsString();
     bool run = true;
     do{
     if (consola.configuracao() == 1)
