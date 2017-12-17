@@ -13,6 +13,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include <fstream>
+#include<stdlib.h>
 
 using namespace std;
 
@@ -43,7 +45,7 @@ public:
     
     int simulacao();
     void criaNinho(int i,int j);
-    void criaFormigas(int i, int j, int k);
+    void criaFormigas(int i, char a, int j);
     void criaFor(int i, int j, int k, int l);
     void criaMigalha(int i, int j);
     void foca(int i, int j);

@@ -15,7 +15,7 @@ Comandos::~Comandos(){
 int Comandos :: configuracao(){
     string op,nficheiro;
     bool run = true;
-    int i, j, k, l ;
+    int i;
     lim = -1;                     
     nenergia = -1;                
     menergia = -1;                
@@ -37,47 +37,52 @@ int Comandos :: configuracao(){
             defMundo(i);
     }
     
-    if (op == "defen"){
+    else if (op == "defen"){
         iss >> i;
-            defEnergia(i);
+        defEnergia(i);
     }
     
-    if (op == "defpc"){
+    else if (op == "defpc"){
         iss >> i;
-            defPercentagemCriarFormiga(i);
+        defPercentagemCriarFormiga(i);
     }
-    if (op == "defvt"){
+    else if (op == "defvt"){
         iss >> i;
-            defValorTransferencia(i);
-    }
-    
-    if (op == "defmi"){
-        iss >> i;
-            defMigalhasIniciais(i);
+        defValorTransferencia(i);
     }
     
-    if (op == "defme"){
+    else if (op == "defmi"){
         iss >> i;
-            defEnergiaMigalhas(i);
+        defMigalhasIniciais(i);
     }
     
-    if (op == "defnm"){
+    else if (op == "defme"){
         iss >> i;
-            defNumeroMigalhas(i);
+        defEnergiaMigalhas(i);
     }
     
-    if (op == "executa"){
+    else if (op == "defnm"){
+        iss >> i;
+        defNumeroMigalhas(i);
+    }
+    
+    else if (op == "executa"){
         iss >> nficheiro;
+        executa(nficheiro);
     }
     
-     if (op == "inicio"){
+    else if (op == "inicio"){
          if (inicio() == 1)
              return 1;
     }
     
-    if (op == "sair"){
-        run = false;
+    else if (op == "sair"){
+        return 0;
     }
+    
+    else 
+        cout << "Por favor introduza um comando valido";
+    
     }while (run == true);
     return 0;
 }
@@ -153,7 +158,23 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
     }                              //valor de migalhas criadas a cada 
 }                                 //instance varia entre 0 e este valor
 
-void Comandos::executa(string ficheiro){}
+void Comandos::executa(string ficheiro){
+    ifstream fi;
+    
+             if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
+             && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
+         return 1;
+         else{
+             if (lim<10) cout <<"Limite do mundo nao definido" << endl;
+             if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
+             if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
+             if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
+             if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
+             if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
+             if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
+             return 0;
+         }
+}
 
 int Comandos::inicio(){
          if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
@@ -172,19 +193,84 @@ int Comandos::inicio(){
 }
 
 int Comandos::simulacao(){
-    string op;
+    string op,nficheiro;
+    char a,b,c;
+    int i, j, k, l ;
     bool run = true;
-    cout << "Simulacao iniciada com sucesso, pressione 1 para sair, 2 para voltar a configuracao.";
     do{
+    system("cls");
+    cout << "Introduza um comando: ";
     getline(cin, op);
     
     istringstream iss(op);
     iss >> op;        
-    if (op == "1")
-        return 1;
+    if (op == "defen"){
+        iss >> i;
+        defEnergia(i);
+    }
     
-    if (op == "2")
-        return 0;                     
+    else if (op == "defpc"){
+        iss >> i;
+        defPercentagemCriarFormiga(i);
+    }
+    else if (op == "defvt"){
+        iss >> i;
+        defValorTransferencia(i);
+    }
+    
+    else if (op == "defmi"){
+        iss >> i;
+        defMigalhasIniciais(i);
+    }
+    
+    else if (op == "defme"){
+        iss >> i;
+        defEnergiaMigalhas(i);
+    }
+    
+    else if (op == "defnm"){
+        iss >> i;
+        defNumeroMigalhas(i);
+    }
+    
+    else if (op == "executa"){
+        iss >> nficheiro;
+        executa(nficheiro);
+    }
+    
+    else if (op == "sair"){
+        return 0;
+    }  
+    
+    else if (op == "ninho"){
+        iss >> i;
+        iss >> j;
+        criaNinho(i,j);
+    }
+    
+    else if (op == "criaf"){
+        iss >> i;
+        iss >> a;
+        iss >> j;
+        criaFormigas(i,a,j);
+    }
+    else if (op == "tempo"){
+        tempo();
+    }
+    else if (op == "listamundo"){
+        listaMundo();
+    }
+    else if (op == "listaninho"){
+        iss >> i;
+        listaNinho(i);
+    }
+    
+    else if (op == "listaposicao"){
+        iss >> i;
+        iss >>  j;
+        listaPosicao(i,j);
+    }
+    
     }while (run == true);
     return 0;
 }
