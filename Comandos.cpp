@@ -25,7 +25,7 @@ int Comandos :: configuracao(){
     nmigalhas = -1;  
     
     do{
-    i = -1, j = -1, k = -1, l = -1;
+    i = -1;
     cout << "Introduza um comando: ";
     getline(cin, op);   
     
@@ -161,35 +161,35 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
 void Comandos::executa(string ficheiro){
     ifstream fi;
     
-             if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
-             && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
-         return 1;
-         else{
-             if (lim<10) cout <<"Limite do mundo nao definido" << endl;
-             if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
-             if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
-             if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
-             if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
-             if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
-             if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
-             return 0;
-         }
+    if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
+       && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
+        return 1;
+    else{
+        if (lim<10) cout <<"Limite do mundo nao definido" << endl;
+        if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
+        if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
+        if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
+        if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
+        if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
+        if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
+        return 0;
+    }
 }
 
 int Comandos::inicio(){
-         if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
-             && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
-         return 1;
-         else{
-             if (lim<10) cout <<"Limite do mundo nao definido" << endl;
-             if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
-             if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
-             if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
-             if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
-             if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
-             if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
-             return 0;
-         }
+    if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
+        && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
+        return 1;
+    else{
+        if (lim<10) cout <<"Limite do mundo nao definido" << endl;
+        if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;
+        if (menergia < 1) cout << "Energia das migalhas nao definida" << endl;
+        if (energianovaformiga < 0 || energianovaformiga > 100) cout << "Energia para criar uma nova formiga nao definida" << endl;
+        if (transferir < 0) cout << "Energia transferida do ninho para a formiga nao definida" << endl;
+        if (percentagem < 0 || percentagem > 100) cout << "Percentagem de posicoes iniciais vazias ocupadas por migalhas nao definida" << endl;
+        if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
+        return 0;
+    }
 }
 
 int Comandos::simulacao(){
@@ -267,10 +267,57 @@ int Comandos::simulacao(){
     
     else if (op == "listaposicao"){
         iss >> i;
-        iss >>  j;
+        iss >> j;
         listaPosicao(i,j);
     }
     
     }while (run == true);
     return 0;
+}
+
+void Comandos::criaNinho(int i, int j){
+    if (i<0 || i >= lim)
+        cout << "Linha invalida" << endl;
+    if (j<0 || j >= lim)
+        cout << "Coluna invalida" << endl;
+    if (i>=0 && i < lim && j>=0 && j < lim)
+        //Cria ninho nesta posicao
+        cout << "Ninho criado em X:" << i << " Y:" <<j << endl;
+}
+
+void Comandos::criaFormigas(int i, char a, int j){
+    int nninhos = 5;
+    if (i<1)
+        cout << "Introduza um numero de formigas valido" << endl;
+    if (a != "E")
+        cout << "Introduza um tipo valido" << endl;
+    if (j > nninhos || j < 1)
+        cout << "O ninho que indicou nao existe" << endl;
+    if (i>=1 && a== "E" && j <= nninhos && j>0)
+        cout << i << " formigas do tipo " << a << " foram acrescentadas ao ninho " << j << endl;
+}
+
+void Comandos::tempo(){
+    
+}
+
+void Comandos::listaMundo(){
+}
+
+void Comandos::listaNinho(int i){
+    int nninhos = 5;
+    if (i > nninhos || i < 1)
+       cout << "O ninho que indicou nao existe" << endl;
+    if (i <= nninhos && i>0)
+        cout << "O ninho " << i << " tem:" << endl;
+ }
+
+void Comandos::listaPosicao(int i, int j){
+    if (i<0 || i >= lim)
+        cout << "Linha invalida" << endl;
+    if (j<0 || j >= lim)
+        cout << "Coluna invalida" << endl;
+    if (i>=0 && i < lim && j>=0 && j < lim)
+        //Cria ninho nesta posicao
+        cout << "Na posicao X:" << i << " Y:" <<j << " existe: "<< endl;
 }

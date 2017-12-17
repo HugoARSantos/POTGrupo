@@ -23,7 +23,7 @@ public:
     int lim;                     //Limite do mundo, não pode ser alterado durante a simulação
     int nenergia;                //Energia inicial dos ninhos
     int menergia;                //Energia inicial das migalhas
-    int energianovaformiga;           //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
+    int energianovaformiga;      //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
     int transferir;              //Unidade de energia transferida entre ninho e formiga por iteração
     int percentagem;             //Posiçoes vazias ocupadas por migalhas ao inicio
     int nmigalhas;               //maximo de migalhas criadas a cada instance            
@@ -42,7 +42,7 @@ public:
     void defNumeroMigalhas(int i);
     void executa(string ficheiro);
     int inicio();
-    
+
     int simulacao();
     void criaNinho(int i,int j);
     void criaFormigas(int i, char a, int j);
