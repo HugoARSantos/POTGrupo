@@ -81,7 +81,7 @@ int Comandos :: configuracao(){
     }
     
     else 
-        cout << "Por favor introduza um comando valido";
+        cout << "Por favor introduza um comando valido" << endl;
     
     }while (run == true);
     return 0;

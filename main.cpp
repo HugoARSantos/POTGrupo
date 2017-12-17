@@ -6,12 +6,22 @@
 #include "Comandos.h"
 #include "Mundo.h"
 #include "Simulacao.h"
+#include "Ninho.h"
+#include "Exploradora.h"
+#include "Formiga.h"
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 int main() {
     Comandos consola;
-//    Mundo m(15);
-//    Ninho n(5,7,3,m);
-//    Formiga()
+    bool a;
+    Mundo m(15);
+    Ninho n(5,7,3,&m);
+    Exploradora ex(5,5,&n);
+    a = n.acrescentaFormiga(&ex);
+    cout << n.getAsString();
     bool run = true;
     do{
     if (consola.configuracao() == 1)

@@ -47,7 +47,7 @@ string Ninho::getAsString() const {
     oss << "\nId Ninho: " << id << endl;
     for (unsigned int i = 0; i < formigas.size(); i++)
         oss << formigas[i]->getAsString();
-
+    oss << endl;
     return oss.str();
 }
 int Ninho ::retornaPosxy(int z, bool j){
