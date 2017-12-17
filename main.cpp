@@ -17,7 +17,7 @@ using namespace std;
 
 int main() {
   
-    t.testar();
+  
     Comandos consola;
     
     bool run = true;
