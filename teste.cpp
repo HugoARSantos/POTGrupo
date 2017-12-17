@@ -10,15 +10,22 @@
  * 
  * Created on 17 de Dezembro de 2017, 23:36
  */
-
+#include "Comandos.h"
+#include "Mundo.h"
+#include "Simulacao.h"
+#include "Ninho.h"
+#include "Exploradora.h"
+#include "Formiga.h"
+#include <string>
+#include <iostream>
 #include "teste.h"
 
-teste::teste() {
+teste::teste(){
+    testar();
 }
-
-teste::teste(const teste& orig) {
+void teste::testar(){
+    Mundo m(10);
+    Ninho n (1,2,3,&m);
+    cout<<n.getAsString();
+    
 }
-
-teste::~teste() {
-}
-

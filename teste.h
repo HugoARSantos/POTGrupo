@@ -18,11 +18,10 @@ class teste {
 public:
     void testar();
     teste();
-    teste(const teste& orig);
-    virtual ~teste();
-private:
+    };
+    
 
-};
+
 
 #endif /* TESTE_H */
 

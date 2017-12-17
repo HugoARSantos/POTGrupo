@@ -9,13 +9,14 @@
 #include "Ninho.h"
 #include "Exploradora.h"
 #include "Formiga.h"
+
 #include <string>
 #include <iostream>
-#include "teste.h"
+
 using namespace std;
 
 int main() {
-    teste t;
+  
     t.testar();
     Comandos consola;
     
