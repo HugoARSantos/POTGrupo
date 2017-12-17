@@ -22,7 +22,7 @@ class Ninho {
         static int sequencia;
         int pesquisa(int idd)const;
 public:
-    Ninho();
+    Ninho(int xx, int yy,int e);
     bool acrescentaFormiga(Formiga * formiga);
     bool removerFormiga(int idd);
     int getX(){return x;}

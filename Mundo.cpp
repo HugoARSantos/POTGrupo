@@ -10,7 +10,10 @@
 
 #include <iostream>
 
-
+Mundo::Mundo(int x ){
+    dim=x;
+    for (int i = 0; i< dim; ++i) { tab[i] = new int[dim]; }
+}
 Mundo::Mundo(const Mundo& orig) {
 }
 void Mundo::MostraMundo(){
@@ -18,7 +21,7 @@ void Mundo::MostraMundo(){
 }
 int Mundo::VerificaPosicao(int xx, int yy){
 
-    if(tab[xx][yy]==0){
+    if(tab[xx][yy]==NULL){
         return 1;}
     else
         

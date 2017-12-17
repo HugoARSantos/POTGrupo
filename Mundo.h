@@ -7,22 +7,24 @@
 #define MUNDO_H
 #include "Ninho.h"
 #include <vector>
+
 class Formiga;
 class Mundo {
     
-    
+    int dim;
     vector<Ninho *> ninhos;
-    int tab[10][10]={0};
-    
+    int **tab = new int*[dim];
+
 public:
     
-    Mundo(int dim){};
+    Mundo(int x);
     void MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();
     virtual ~Mundo();
     int VerificaPosicao(int xx,int yy);
-private:
+    string getAsString()const;
+
 
 };
 
