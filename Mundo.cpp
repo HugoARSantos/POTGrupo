@@ -53,6 +53,25 @@ void Mundo::preencheMatriz(){
     
     //}
 }
+
+int Mundo::pesquisa(int idd) const{
+    
+    for (unsigned int i = 0; i < ninhos.size(); i++)
+        if (ninhos[i]->getId() == idd){
+            return i; 
+        }
+    return -1;
+}
+bool Mundo::acrescentaFormiga(Ninho* ninho){
+    if (ninho == nullptr || pesquisa(ninho->getId()) != -1){
+        return false;}
+     
+    ninhos.push_back(ninho);
+    return true;
+}
+    
+    
+
 string Mundo::getAsString() const{
     ostringstream oss;
     for(int i=0;i<dim;i++){
