@@ -22,8 +22,8 @@ class Formiga {
         int raio_movimento;
         static int sequencia;
 public:
-    Formiga(int i,int posx,int posy,const Ninho & n,int e=0,int rv=0,int rm=0)
-    :ninho(&n),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm){
+    Formiga(int i,int posx,int posy,char t,const Ninho & n,int e=0,int rv=0,int rm=0)
+    :ninho(&n),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(t){
              id=sequencia;
         sequencia++;}
         
@@ -41,7 +41,7 @@ public:
         void SetXY(int x,int y);
         void SetEnergia(int e);
         void removeEnergia(int mv);
-   
+      
         int regraPasseia();
     
     virtual ~Formiga();
