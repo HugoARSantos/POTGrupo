@@ -9,6 +9,7 @@
 #include "Formiga.h"
 
 using namespace std;
+
 class Mundo;
 class Ninho {
     private:
