@@ -66,10 +66,10 @@ int Comandos :: configuracao(){
         defNumeroMigalhas(i);
     }
     
-    else if (op == "executa"){
+    /*else if (op == "executa"){
         iss >> nficheiro;
         executa(nficheiro);
-    }
+    }*/
     
     else if (op == "inicio"){
          if (inicio() == 1)
@@ -158,7 +158,7 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
     }                              //valor de migalhas criadas a cada 
 }                                 //instance varia entre 0 e este valor
 
-void Comandos::executa(string ficheiro){
+/*void Comandos::executa(string ficheiro){
     ifstream fi;
     
     if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
@@ -175,7 +175,7 @@ void Comandos::executa(string ficheiro){
         if (nmigalhas < 1) cout << "Numero maximo de migalhas a ser criado a cada iteracao nao definido." << endl;
         //return 0;
     }
-}
+}*/
 
 int Comandos::inicio(){
     if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
