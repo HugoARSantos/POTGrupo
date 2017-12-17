@@ -36,6 +36,7 @@ public:
     string getAsString()const;
     void retiraEnergia();
 };
+ostream & operator<<(ostream & saida, const Ninho & x);
 
 #endif /* NINHO_H */
 

@@ -65,3 +65,7 @@ void Ninho::retiraEnergia(){
     energia--;
 }
 
+ostream & operator<<(ostream & saida, const Ninho & x) {
+    saida << x.getAsString();
+    return saida;
+}

@@ -29,6 +29,7 @@ public:
 
 
 };
+ostream & operator<<(ostream & saida, const Mundo & x);
 
 #endif /* MUNDO_H */
 

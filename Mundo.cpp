@@ -96,5 +96,8 @@ Mundo::~Mundo() {
     
     delete tab;
 }
-
+ostream & operator<<(ostream & saida, const Mundo & x) {
+    saida << x.getAsString();
+    return saida;
+}
 
