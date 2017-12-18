@@ -17,8 +17,16 @@ using namespace std;
 
 int main() {
   
-  
     Comandos consola;
+    Mundo m(15);
+    Ninho n(5,5,10,&m);
+    Exploradora a(2,2,&n);
+    Exploradora b(4,4,&n);
+    Exploradora c(6,6,&n);
+    n.acrescentaFormiga(&a);
+    n.acrescentaFormiga(&b);
+    n.acrescentaFormiga(&c);
+    cout << n.getAsString();
     
     bool run = true;
     do{
