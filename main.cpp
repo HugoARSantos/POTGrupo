@@ -25,8 +25,10 @@ int main() {
     n.acrescentaFormiga(&a);
     n.acrescentaFormiga(&b);
     n.acrescentaFormiga(&c);
+    m.acrescentaFormiga(&n);
+   //m.preencheMatriz();
     cout << n.getAsString();
-    
+    cout <<m.getAsString();
     bool run = true;
     do{
     if (consola.configuracao() == 1)

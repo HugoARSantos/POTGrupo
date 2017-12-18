@@ -13,7 +13,7 @@ class Mundo {
     
     int dim;
     vector<Ninho *> ninhos;
-    int **tab = new int*[dim];
+    int tab[10][10];
     int pesquisa(int idd)const;
 public:
     

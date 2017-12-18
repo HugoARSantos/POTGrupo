@@ -13,9 +13,11 @@ using namespace std;
 
 Mundo::Mundo(int x ){
     dim=x;
-    for (int i = 0; i< dim; ++i) { tab[i] = new int[dim];
+    for(int i=0;i<10;i++){
+        for (int j=0;j<10;j++)
+        {tab[i][j]=0;}
     }
-    tab={0};
+    
 }
 Mundo::Mundo(const Mundo& orig) {
 }
@@ -74,11 +76,22 @@ bool Mundo::acrescentaFormiga(Ninho* ninho){
 
 string Mundo::getAsString() const{
     ostringstream oss;
-    for(int i=0;i<dim;i++){
-        oss<<"\n";
-        for(int j=0;j<dim;j++)
-            oss<<tab[i][j]<<endl;
-    }
+    
+     for(int i=0;i<10;i++){
+         oss<<"\n";
+        for (int j=0;j<10;j++){
+        
+            oss<< tab[i][j];}
+    
+        
+        
+    
+     }
+        
+        
+    oss<<"\nindice\n";
+    oss<<tab;
+    
     oss<<"Elementos\n";
     for(int k=0;k<ninhos.size();k++){
         oss<<ninhos[k]->getAsString();
