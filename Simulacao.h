@@ -26,7 +26,6 @@
 
 class Simulacao {
 public:
-    //Mundo m;
     int lim;
     int nenergia;                //Energia inicial dos ninhos
     int menergia;                //Energia inicial das migalhas
@@ -34,6 +33,7 @@ public:
     int transferir;              //Unidade de energia transferida entre ninho e formiga por iteração
     int percentagem;             //Posiçoes vazias ocupadas por migalhas ao inicio
     int nmigalhas;               //maximo de migalhas criadas a cada instance  
+    
     Simulacao(int l, int n, int menergia, int e, int t, int p ,int nm);
     Simulacao(const Simulacao& orig);
     virtual ~Simulacao();

@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=MinGW-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/MinGW-Windows
-CND_ARTIFACT_NAME_Debug=pootgrupo
-CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/pootgrupo
+CND_ARTIFACT_NAME_Debug=pootp
+CND_ARTIFACT_PATH_Debug=dist/Debug/MinGW-Windows/pootp
 CND_PACKAGE_DIR_Debug=dist/Debug/MinGW-Windows/package
-CND_PACKAGE_NAME_Debug=pootgrupo.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/pootgrupo.tar
+CND_PACKAGE_NAME_Debug=pootp.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/MinGW-Windows/package/pootp.tar
 # Release configuration
 CND_PLATFORM_Release=MinGW-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/MinGW-Windows
-CND_ARTIFACT_NAME_Release=pootgrupo
-CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/pootgrupo
+CND_ARTIFACT_NAME_Release=pootp
+CND_ARTIFACT_PATH_Release=dist/Release/MinGW-Windows/pootp
 CND_PACKAGE_DIR_Release=dist/Release/MinGW-Windows/package
-CND_PACKAGE_NAME_Release=pootgrupo.tar
-CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/pootgrupo.tar
+CND_PACKAGE_NAME_Release=pootp.tar
+CND_PACKAGE_PATH_Release=dist/Release/MinGW-Windows/package/pootp.tar
 #
 # include compiler specific variables
 #

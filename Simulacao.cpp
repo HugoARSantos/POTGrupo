@@ -14,10 +14,10 @@
 #include "Simulacao.h"
 
 Simulacao::Simulacao(int l, int n, int menergia, int e, int t, int p ,int nm) {
-    //m = new Mundo(m);
+    Mundo m(l);
     lim = l;
     nenergia = n;                //Energia inicial dos ninhos
-    menergia = menergia;                //Energia inicial das migalhas
+    menergia = menergia;         //Energia inicial das migalhas
     energianovaformiga = e;      //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
     transferir = t;              //Unidade de energia transferida entre ninho e formiga por iteração
     percentagem = p;             //Posiçoes vazias ocupadas por migalhas ao inicio
@@ -120,8 +120,6 @@ void Simulacao::criaNinho(int i, int j){
         cout << "Coluna invalida" << endl;
     if (i>=0 && i < lim && j>=0 && j < lim)
     {
-       // Ninho n(i,j,nenergia, &m);
-       // m.acrescentaFormiga(&n);
         cout << "Ninho criado em X:" << i << " Y:" <<j << endl;
     }
 }
