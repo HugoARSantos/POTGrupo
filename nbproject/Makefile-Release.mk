@@ -41,8 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Mundo.o \
 	${OBJECTDIR}/Ninho.o \
 	${OBJECTDIR}/Simulacao.o \
-	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/teste.o
+	${OBJECTDIR}/main.o
 
 
 # C Compiler Flags
@@ -103,11 +102,6 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
-
-${OBJECTDIR}/teste.o: teste.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/teste.o teste.cpp
 
 # Subprojects
 .build-subprojects:

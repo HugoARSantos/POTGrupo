@@ -9,15 +9,14 @@
 #include "Ninho.h"
 #include "Exploradora.h"
 #include "Formiga.h"
-
 #include <string>
 #include <iostream>
 
 using namespace std;
 
 int main() {
-  
     Comandos consola;
+    
     Mundo m(15);
     Ninho n(5,5,10,&m);
     Exploradora a(2,2,&n);
