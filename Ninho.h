@@ -6,7 +6,10 @@
 #ifndef NINHO_H
 #define NINHO_H
 #include <vector>
+
 #include "Formiga.h"
+
+
 
 using namespace std;
 
@@ -27,10 +30,11 @@ public:
     bool acrescentaFormiga(Formiga * formiga);
     bool removerFormiga(int idd);
     int getX(){return x;}
+    //int getDimensoesMundo()const{return mundo->getDim();}
     int getY(){return y;}
     int getId()const{return id;}
     int gettamanhoVetor()const{return formigas.size();}
-    int  retornaPosxy(int z,bool j);
+    int  retornaPosxy(int z,int j);
     Ninho(const Ninho& orig);
     virtual ~Ninho();
     string getAsString()const;

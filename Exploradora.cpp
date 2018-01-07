@@ -14,10 +14,12 @@
 #include "Exploradora.h"
 
 
-Exploradora::Exploradora(int posxx,int posyy,const Ninho *nn):Formiga(posxx,posyy,nn,200,10,8){
+Exploradora::Exploradora(int posxx,int posyy,const Ninho *nn):Formiga(posxx,posyy,nn,200,10,8,'E'){
     
 };
-
+Exploradora::Exploradora(int posxx,int posyy):Formiga(posxx,posyy,200,10,8,'E'){
+    
+};
 
 Exploradora::~Exploradora() {
 }

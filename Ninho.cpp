@@ -4,6 +4,7 @@
  */
 
 #include "Ninho.h"
+#include "Mundo.h"
 #include <sstream>
 using namespace std;
 int Ninho::sequencia=1;
@@ -44,17 +45,18 @@ Ninho::Ninho(const Ninho& orig) {
 }
 string Ninho::getAsString() const {
     ostringstream oss;
-    oss << "\nId Ninho: " << id << endl;
+    oss << "\nId Ninho: " << id << "\n"<<"Tem "<<formigas.size()<<" Formigas"<<endl;
+    
     for (unsigned int i = 0; i < formigas.size(); i++)
         oss << formigas[i]->getAsString();
     oss << endl;
     return oss.str();
 }
-int Ninho ::retornaPosxy(int z, bool j){
-    for(unsigned int i=0;i<formigas.size();i++){
+int Ninho ::retornaPosxy(int z, int j){
+    for( int i=0;i<formigas.size();i++){
         if(i==z && j==0)
             return formigas[i]->getX();
-        else if(i==z && j==1)
+        if(i==z && j==1)
             return formigas[i]->getY();
     }
 }

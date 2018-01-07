@@ -6,14 +6,15 @@
 #ifndef MUNDO_H
 #define MUNDO_H
 #include "Ninho.h"
-#include <vector>
+
 
 class Formiga;
+
 class Mundo {
     
     int dim;
     vector<Ninho *> ninhos;
-    int tab[10][10];
+    char **tab;
     int pesquisa(int idd)const;
 public:
     
@@ -21,12 +22,14 @@ public:
     void MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();
-    bool acrescentaFormiga(Ninho * ninho);
+    bool acrescentaNinho(Ninho * ninho);
+    bool acrescentaFormiga(Formiga *f,int id);
+    int getDim()const{return dim;}
     int getNninhos(){return ninhos.size();};
     virtual ~Mundo();
     int VerificaPosicao(int xx,int yy);
     string getAsString()const;
-
+    string listaPosicao(int x,int y)const;
 
 };
 ostream & operator<<(ostream & saida, const Mundo & x);
