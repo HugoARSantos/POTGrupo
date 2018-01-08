@@ -20,7 +20,8 @@ int main() {
     //lista posicao ??????????
     Comandos consola;
     int i;
-    Mundo m(15);
+    Mundo m(15,1);
+    
     Ninho n(5,5,10,&m);
     Ninho n1(1,1,2,&m);
      Exploradora a(2,2,&n);

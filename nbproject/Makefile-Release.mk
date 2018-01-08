@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Comandos.o \
 	${OBJECTDIR}/Exploradora.o \
 	${OBJECTDIR}/Formiga.o \
+	${OBJECTDIR}/Migalha.o \
 	${OBJECTDIR}/Mundo.o \
 	${OBJECTDIR}/Ninho.o \
 	${OBJECTDIR}/Simulacao.o \
@@ -82,6 +83,11 @@ ${OBJECTDIR}/Formiga.o: Formiga.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Formiga.o Formiga.cpp
+
+${OBJECTDIR}/Migalha.o: Migalha.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Migalha.o Migalha.cpp
 
 ${OBJECTDIR}/Mundo.o: Mundo.cpp
 	${MKDIR} -p ${OBJECTDIR}

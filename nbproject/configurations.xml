@@ -7,6 +7,7 @@
       <itemPath>Comandos.h</itemPath>
       <itemPath>Exploradora.h</itemPath>
       <itemPath>Formiga.h</itemPath>
+      <itemPath>Migalha.h</itemPath>
       <itemPath>Mundo.h</itemPath>
       <itemPath>Ninho.h</itemPath>
       <itemPath>Simulacao.h</itemPath>
@@ -21,6 +22,7 @@
       <itemPath>Comandos.cpp</itemPath>
       <itemPath>Exploradora.cpp</itemPath>
       <itemPath>Formiga.cpp</itemPath>
+      <itemPath>Migalha.cpp</itemPath>
       <itemPath>Mundo.cpp</itemPath>
       <itemPath>Ninho.cpp</itemPath>
       <itemPath>Simulacao.cpp</itemPath>
@@ -59,6 +61,10 @@
       <item path="Formiga.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Formiga.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Migalha.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Migalha.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Mundo.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -106,6 +112,10 @@
       <item path="Formiga.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Formiga.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Migalha.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Migalha.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Mundo.cpp" ex="false" tool="1" flavor2="0">
       </item>

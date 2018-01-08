@@ -11,7 +11,7 @@
 #include <iostream>
 using namespace std;
 
-Mundo::Mundo(int x ){
+Mundo::Mundo(int x,int pMigalhas ){
     dim=x;
     tab =new char *[dim];
     for(int i=0;i<dim;++i){

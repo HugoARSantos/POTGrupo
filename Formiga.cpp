@@ -39,7 +39,7 @@ int Formiga :: regraPasseia(){
 
     }
    
-    while(x+auxx<0 ||y+auxy<0 ||x+auxx>a ||y+auxy>a);//CORRIGIR
+    while(x+auxx<0 ||y+auxy<0 ||x+auxx>a ||y+auxy>a);
     
     
      

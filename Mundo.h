@@ -12,15 +12,18 @@
 #include "Ninho.h"
 class Formiga;
 class Ninho;
+class Migalha;
 class Mundo {
     
     int dim;
     vector<Ninho *> ninhos;
+    vector<Migalha *> migalhas;
     char **tab;
     int pesquisa(int idd)const;
 public:
     
-    Mundo(int x);
+    Mundo(int x,int pMigalhas);
+    Mundo(int x){x=dim;}
     void MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();
