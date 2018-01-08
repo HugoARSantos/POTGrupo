@@ -41,6 +41,7 @@ public:
     virtual ~Ninho();
     string getAsString()const;
     void retiraEnergia();
+    Ninho * duplica()const{return new Ninho(*this);}
 };
 ostream & operator<<(ostream & saida, const Ninho & x);
 

@@ -53,7 +53,7 @@ public:
         int regraPasseia();
     
     virtual ~Formiga();
-    virtual Formiga * duplica()const=0f;
+    virtual Formiga * duplica()const=0;
 
 };
 
