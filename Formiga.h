@@ -7,6 +7,8 @@
 #define FORMIGA_H
 #include <string>
 
+#include "Ninho.h"
+
 using namespace std;
 class Ninho;
 class Formiga {
@@ -33,6 +35,7 @@ public:
         sequencia++;}
         
     Formiga(const Formiga & orig);
+   
     int getX(){return x;}
     int getY(){return y;}
     int getEnergiaInicial(){return energia_inicial;}
@@ -45,11 +48,12 @@ public:
         void SetXY(int x,int y);
         void SetEnergia(int e);
         void removeEnergia(int mv);
-      
+        void setNinho(Ninho * n){ninho=n;}
+        
         int regraPasseia();
     
     virtual ~Formiga();
-
+    virtual Formiga * duplica()const=0f;
 
 };
 

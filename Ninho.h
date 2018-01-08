@@ -5,14 +5,15 @@
 
 #ifndef NINHO_H
 #define NINHO_H
+#include "Formiga.h"
 #include <vector>
 
-#include "Formiga.h"
+
 
 
 
 using namespace std;
-
+class Formiga;
 class Mundo;
 class Ninho {
     private:
@@ -22,7 +23,7 @@ class Ninho {
         int energia_inicial;
         int energia;
         vector<Formiga *>formigas;
-        const Mundo * mundo;
+         const Mundo * mundo;
         static int sequencia;
         int pesquisa(int idd)const;
 public:
@@ -30,10 +31,11 @@ public:
     bool acrescentaFormiga(Formiga * formiga);
     bool removerFormiga(int idd);
     int getX(){return x;}
-    //int getDimensoesMundo()const{return mundo->getDim();}
+    int getDimMundo()const ;
     int getY(){return y;}
     int getId()const{return id;}
     int gettamanhoVetor()const{return formigas.size();}
+    Ninho * getPonteiro(){return this;}
     int  retornaPosxy(int z,int j);
     Ninho(const Ninho& orig);
     virtual ~Ninho();

@@ -5,6 +5,7 @@
 
 #include "Formiga.h"
 #include "Ninho.h"
+#include "Mundo.h"
 #include <string>
 #include <sstream>
 #include <stdlib.h>
@@ -28,12 +29,17 @@ void Formiga :: removeEnergia(int mv){
     energia=energia-(1+mv);
 }
 int Formiga :: regraPasseia(){
-    int auxx,auxy,mv;
+    int auxx=0,auxy=0,mv=0;
+     int a=ninho->getDimMundo();
+     
     do{
      auxx=rand()% (raio_movimento*2+1) - raio_movimento;
      auxy=rand()%(raio_movimento*2+1) -raio_movimento;
-     mv=abs(x-auxx)+abs(y-auxy);}
-    while(x+auxx<0 ||y+auxy<0 ||x+auxx>10 ||y+auxy>10);//CORRIGIR
+     mv=abs(x-auxx)+abs(y-auxy);
+
+    }
+   
+    while(x+auxx<0 ||y+auxy<0 ||x+auxx>a ||y+auxy>a);//CORRIGIR
     
     
      

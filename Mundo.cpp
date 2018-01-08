@@ -36,6 +36,8 @@ bool Mundo::acrescentaFormiga(Formiga* f, int id){
             
   return false;
     }
+    Ninho * n=ninhos[aux]->getPonteiro();
+    f->setNinho(n);
     ninhos[aux]->acrescentaFormiga(f);
     return true;
           
@@ -60,6 +62,10 @@ void Mundo::preencheMatriz(){
     int auxx;
     int auxy;
     int auxF;
+     for(int i=0;i<dim;++i)
+        for(int j= 0;j<dim;++j){
+            tab[i][j]='-';
+        }
     for( int i =0;i<ninhos.size();i++){
         auxx=ninhos[i]->getX();
         

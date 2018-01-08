@@ -23,4 +23,7 @@ Exploradora::Exploradora(int posxx,int posyy):Formiga(posxx,posyy,200,10,8,'E'){
 
 Exploradora::~Exploradora() {
 }
+Formiga * Exploradora::duplica() const{
+return new Exploradora(*this);    
+}
 

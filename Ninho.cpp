@@ -15,6 +15,9 @@ Ninho::Ninho(int xx,int yy,int e,const Mundo * m):mundo(m) {
     id=sequencia;
     sequencia++;
 }
+int Ninho::getDimMundo() const{
+    return mundo->getDim();
+}
 int Ninho::pesquisa(int idd) const{
     
     for (unsigned int i = 0; i < formigas.size(); i++)
@@ -26,7 +29,7 @@ int Ninho::pesquisa(int idd) const{
 bool Ninho::acrescentaFormiga(Formiga * formiga) {
     if (formiga == nullptr || pesquisa(formiga->getId()) != -1){
         return false;}
-     
+    
     formigas.push_back(formiga);
     return true;
 }

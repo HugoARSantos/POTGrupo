@@ -20,6 +20,7 @@ class Exploradora: public Formiga {
 public:
     Exploradora(int posxx,int posyy,const Ninho * nn);
     Exploradora(int posxx,int posyy);
+    Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Exploradora();
 

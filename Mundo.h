@@ -5,11 +5,13 @@
 
 #ifndef MUNDO_H
 #define MUNDO_H
+#include <vector>
+#include <string>
+#include <iostream>
+#include <ostream>
 #include "Ninho.h"
-
-
 class Formiga;
-
+class Ninho;
 class Mundo {
     
     int dim;
