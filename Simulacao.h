@@ -58,7 +58,7 @@ public:
     void foca(int i, int j);
     void tempo(int i);
     void addEnergiaNinho(int i, int j);
-    void addEnergiaNinho(int i, int j, int k);
+    void addEnergiaFormiga(int i, int j, int k);
     void mataFormiga(int i, int j);
     void insecticida(int i);
     void listaMundo();

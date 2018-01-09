@@ -44,24 +44,6 @@ public:
     int executa(string ficheiro);
     int inicio();
 
-    int simulacao();
-    void criaNinho(int i,int j);
-    void criaFormigas(int i, string a, int j);
-    void criaFor(int i, int j, int k, int l);
-    void criaMigalha(int i, int j);
-    void foca(int i, int j);
-    void tempo();
-    void tempo(int i);
-    void addEnergiaNinho(int i, int j);
-    void addEnergiaNinho(int i, int j, int k);
-    void mataFormiga(int i, int j);
-    void insecticida(int i);
-    void listaMundo();
-    void listaNinho(int i);
-    void listaPosicao(int i,int j);
-    void guardaMundo(string nome);
-    void mudaMundo(string nome);
-    void apagaMundo(string nome);
     void sair();
 };
 

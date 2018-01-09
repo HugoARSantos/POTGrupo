@@ -32,6 +32,7 @@ int Simulacao::simula(){
     string a,b,c;
     int i, j, k, l ;
     bool run = true;
+    
     do{
     system("cls");
     
@@ -95,6 +96,11 @@ int Simulacao::simula(){
         iss >> j;
         criaFormigas(i,a,j);
     }
+        else if (op == "cria1"){
+        iss >> a;
+        iss >> j;
+        criaFormigas(1,a,j);
+    }
     else if (op == "tempo"){
         iss >> i;
         tempo(i);
@@ -111,6 +117,24 @@ int Simulacao::simula(){
         iss >> i;
         iss >> j;
         listaPosicao(i,j);
+    }
+    
+    else if (op=="energninho"){
+        iss >> i;
+        iss >> j;
+        addEnergiaNinho(i,j);
+    }
+    
+    /*else if (op=="migalha")
+    else if (op=="energformiga")
+    else if (op=="mata")
+    else if (op=="inseticida")
+    else if (op=="guarda")
+    else if (op=="muda")
+    else if (op=="apaga")*/
+    else {
+        cout<< "Por favor use um comando correcto.\nPressione qualquer tecla para continuar";
+        getch();
     }
     
     }while (run == true);
@@ -131,10 +155,10 @@ void Simulacao::criaNinho(int i, int j){
 }
 
 void Simulacao::criaFormigas(int i, string a, int j){
-    int nninhos = 5;
+    int nninhos = m.getNninhos();
     if (i<1)
         cout << "Introduza um numero de formigas valido" << endl;
-    if (a != "E")
+    if (a != "E"||a != "E"||a != "E"||a != "E"||a != "E"||a != "E")
         cout << "Introduza um tipo valido" << endl;
     if (j > nninhos || j < 1)
         cout << "O ninho que indicou nao existe" << endl;
@@ -156,14 +180,25 @@ void Simulacao::tempo(int i){
 }
 
 void Simulacao::listaMundo(){
+    system("cls");
+    cout << m.getAsString();
+    cout << endl << "Pressione qualquer tecla para continuar";
+    getch();
 }
 
 void Simulacao::listaNinho(int i){
-    int nninhos = 5;
-    if (i > nninhos || i < 1)
+    int nninhos = m.getNninhos();
+    if (i > nninhos || i < 1){
        cout << "O ninho que indicou nao existe" << endl;
+       getch();
+    }
     if (i <= nninhos && i>0)
-        cout << "O ninho " << i << " tem:" << endl;
+    {
+        system("cls");
+        cout << m.ListaNinho(i);
+        cout << endl << "Pressione qualquer tecla para continuar";
+        getch();
+    }
  }
 
 void Simulacao::listaPosicao(int i, int j){
@@ -234,4 +269,36 @@ void Simulacao::defNumeroMigalhas(int i){   //defnm
         nmigalhas = i;
         cout << "A cada interacao serao criadas entre 0 a " << nmigalhas << " migalhas." << endl;              
     }                              //valor de migalhas criadas a cada 
-}                                 //instance varia entre 0 e este valor
+} //instance varia entre 0 e este valor
+void Simulacao::addEnergiaNinho(int i, int j){
+    int nninhos = m.getNninhos();
+    if (i > nninhos || i < 1){
+       cout << "O ninho que indicou nao existe" << endl;
+       getch();
+    }
+    else
+        m.acrescentaEnergiaNinho(i,j);
+}
+
+void mataFormiga(int i, int j){
+};
+void insecticida(int i){
+};
+void listaMundo(){
+    
+};
+void listaNinho(int i){
+    
+};
+void listaPosicao(int i,int j){
+    
+};
+void guardaMundo(string nome){
+    
+};
+void mudaMundo(string nome){
+    
+};
+void apagaMundo(string nome){
+    
+};

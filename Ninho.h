@@ -9,9 +9,6 @@
 #include <vector>
 
 
-
-
-
 using namespace std;
 class Formiga;
 class Mundo;
@@ -40,8 +37,11 @@ public:
     Ninho(const Ninho& orig);
     virtual ~Ninho();
     string getAsString()const;
+    string getAsStringTwo() const;
     void retiraEnergia();
     Ninho * duplica()const{return new Ninho(*this);}
+    int getEnergia(){return energia;};
+    void setEnergia(int j){energia+=j;};
 };
 ostream & operator<<(ostream & saida, const Ninho & x);
 

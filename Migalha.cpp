@@ -39,6 +39,6 @@ bool Migalha::removeEnergia(int x){
 
 string Migalha::getAsString(){
     ostringstream oss;
-    oss << "\nPosX:" << posx << " PosY:" << posy << endl;
+    oss << "Migalha: PosX:" << posx << " PosY:" << posy << endl;
     return oss.str();
 }

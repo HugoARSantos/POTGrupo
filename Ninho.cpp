@@ -11,7 +11,8 @@ int Ninho::sequencia=1;
 Ninho::Ninho(int xx,int yy,int e,const Mundo * m):mundo(m) {
     x=xx;
     y=yy;
-    energia_inicial=energia=e;
+    energia_inicial=e;
+    energia = e;
     id=sequencia;
     sequencia++;
 }
@@ -48,12 +49,19 @@ Ninho::Ninho(const Ninho& orig) {
 }
 string Ninho::getAsString() const {
     ostringstream oss;
-    oss << "\nId Ninho: " << id << "\n"<<"Tem "<<formigas.size()<<" Formigas"<<endl;
-    
-    for (unsigned int i = 0; i < formigas.size(); i++)
-        oss << formigas[i]->getAsString();
-    oss << endl;
+    oss << "\nId Ninho: " << id << "\nNa posicao X:" << x <<" Y: " << y
+            <<"\nEnergia:" << energia
+            <<"\nTem "<<formigas.size()<<" Formigas"<<endl;
     return oss.str();
+}
+
+string Ninho::getAsStringTwo() const{
+        ostringstream oss;
+        oss << "\nId Ninho: " << id << "\nNa posicao X:" << x <<" Y: " << y << endl<<"Energia:"<<energia<<endl;
+            for (unsigned int i = 0; i < formigas.size(); i++)
+                oss << formigas[i]->getAsString();
+        
+        return oss.str();
 }
 int Ninho ::retornaPosxy(int z, int j){
     for( int i=0;i<formigas.size();i++){

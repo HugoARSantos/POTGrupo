@@ -9,6 +9,8 @@
 #include <string>
 #include <iostream>
 #include <ostream>
+#include <conio.h>
+#include <stdio.h>
 #include "Ninho.h"
 class Formiga;
 class Ninho;
@@ -27,6 +29,8 @@ public:
     Mundo(int x,int pMigalhas,int e);
     Mundo(int x){x=dim;}
     string MostraMundo();
+    string ListaNinho(int i);
+    void acrescentaEnergiaNinho(int i, int j);
     Mundo(const Mundo& orig);
     void preencheMatriz();
     void adicionaMigalhas(int e,int xx);

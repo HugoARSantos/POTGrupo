@@ -143,25 +143,42 @@ bool Mundo::acrescentaNinho(Ninho* ninho){
 string Mundo::getAsString() const{
     ostringstream oss;
     
-     for(int i=0;i<dim;i++){
+     /*for(int i=0;i<dim;i++){
          oss<<"\n";
         for (int j=0;j<dim;j++){
         
             oss<< tab[i][j];}
-     }
+     }*/
       
     oss<<"\nElementos\n";
     for(int k=0;k<ninhos.size();k++){
         oss<<ninhos[k]->getAsString();
-     
     }
     
-        /*for(int k=0;k<migalhas.size();k++){
-        oss<<migalhas[k]->g1etAsString();
+        for(int k=0;k<migalhas.size();k++){
+        oss<<migalhas[k]->getAsString();
      
-    }*/
+    }
+    oss << endl;
     return oss.str();
 }
+
+string Mundo::ListaNinho(int i){
+    ostringstream oss;
+    oss << ninhos[i-1]->getAsStringTwo();
+    return oss.str();
+}
+
+void Mundo::acrescentaEnergiaNinho(int i, int j){
+    if (ninhos[i-1]->getEnergia()+j<=0){
+        cout << "Nao pode tornar a energia do ninho nula ou negativa" << endl;
+        getch();
+    }
+    else 
+        ninhos[i-1]->setEnergia(j);
+}
+
+
 Mundo::~Mundo() {
     for(int i=0;i<dim;i++){
         delete tab[i];
@@ -171,6 +188,7 @@ Mundo::~Mundo() {
     
     delete tab;
 }
+
 void Mundo::adicionaMigalhas(int ee,int xx){
    
     int aux=calculaQuantasMigalhas(xx);
