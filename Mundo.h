@@ -26,7 +26,7 @@ public:
     
     Mundo(int x,int pMigalhas,int e);
     Mundo(int x){x=dim;}
-    void MostraMundo();
+    string MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();
     void adicionaMigalhas(int e,int xx);

@@ -29,7 +29,8 @@
 
 class Simulacao {
 public:
-    //Mundo m;
+    Mundo m;
+    int it;
     int lim;
     int nenergia;                //Energia inicial dos ninhos
     int menergia;                //Energia inicial das migalhas
@@ -47,7 +48,7 @@ public:
     void defMigalhasIniciais(int i);
     void defEnergiaMigalhas(int i);
     void defNumeroMigalhas(int i);
-    void executa(string ficheiro);
+    //void executa(string ficheiro);
     
     int simula();
     void criaNinho(int i,int j);
@@ -55,7 +56,6 @@ public:
     void criaFor(int i, int j, int k, int l);
     void criaMigalha(int i, int j);
     void foca(int i, int j);
-    void tempo();
     void tempo(int i);
     void addEnergiaNinho(int i, int j);
     void addEnergiaNinho(int i, int j, int k);

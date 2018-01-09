@@ -19,7 +19,7 @@ int main() {
     //pelo ninho, pois elas nao tem um ponteiro para o ninho
     //lista posicao ??????????
     Comandos consola;
-    int i;
+    /*int i;
     int l = 10;
     int me = 50;
     int pm = 50;
@@ -49,7 +49,7 @@ int main() {
     m.preencheMatriz();
     //cout <<n.getAsString();
     cout<<m;
-    
+    */
     bool run = true;
     do{
     if (consola.configuracao() == 1)

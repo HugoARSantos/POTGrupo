@@ -45,8 +45,17 @@ int Mundo::nEspacosVazios(){
 }
 Mundo::Mundo(const Mundo& orig) {
 }
-void Mundo::MostraMundo(){
-
+string Mundo::MostraMundo(){
+    ostringstream oss;
+    
+     for(int i=0;i<dim;i++){
+         oss<<"\n";
+        for (int j=0;j<dim;j++){
+        
+            oss<< tab[i][j];}
+     }
+    oss << endl;
+    return oss.str();
 }
 bool Mundo::acrescentaFormiga(Formiga* f, int id){
     int aux=pesquisa(id);
@@ -88,7 +97,7 @@ void Mundo::preencheMatriz(){
       for(int i=0;i<migalhas.size();++i){
            auxx = migalhas[i]->getPosX();
            auxy = migalhas[i]->getPosY();
-           tab[auxx-1][auxy-1]='c';
+           tab[auxx-1][auxy-1]='m';
     }
     for(int i =0;i<ninhos.size();i++){
          auxF=ninhos[i]->gettamanhoVetor();
@@ -122,7 +131,7 @@ int Mundo::pesquisa(int idd) const{
     return -1;
 }
 bool Mundo::acrescentaNinho(Ninho* ninho){
-    if (ninho == nullptr || pesquisa(ninho->getId()) != -1){
+    if (ninho == nullptr || pesquisa(ninho->getId()) != -1 ){
         return false;}
      
     ninhos.push_back(ninho);

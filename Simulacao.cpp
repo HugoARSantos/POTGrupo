@@ -13,7 +13,8 @@
 
 #include "Simulacao.h"
 
-Simulacao::Simulacao(int l, int n, int me, int e, int t, int p ,int nm)/*:m(l,p,me)*/ {
+Simulacao::Simulacao(int l, int n, int me, int e, int t, int p ,int nm):m(l,p,me){
+    it = 0;
     lim = l;
     nenergia = n;                //Energia inicial dos ninhos
     menergia = me;               //Energia inicial das migalhas
@@ -33,11 +34,15 @@ int Simulacao::simula(){
     bool run = true;
     do{
     system("cls");
-//    m.preencheMatriz();
-//    cout << m;
+    
+    m.preencheMatriz();
+    cout << m.MostraMundo();
     cout << "Introduza um comando: ";
     getline(cin, op);
-    
+    i=-1;
+    k=-1;
+    j=-1;
+    l=-1;
     istringstream iss(op);
     iss >> op;        
     if (op == "defen"){
@@ -75,14 +80,13 @@ int Simulacao::simula(){
     }*/
     
     else if (op == "sair"){
-        return 0;
+        return 1;
     }  
     
     else if (op == "ninho"){
         iss >> i;
         iss >> j;
-//        Ninho n(i,j,nenergia,&m);
-//        m.acrescentaNinho(&n);
+        criaNinho(i,j);
     }
     
     else if (op == "criaf"){
@@ -92,7 +96,8 @@ int Simulacao::simula(){
         criaFormigas(i,a,j);
     }
     else if (op == "tempo"){
-        tempo();
+        iss >> i;
+        tempo(i);
     }
     else if (op == "listamundo"){
         listaMundo();
@@ -113,13 +118,15 @@ int Simulacao::simula(){
 }
 
 void Simulacao::criaNinho(int i, int j){
-    if (i<0 || i >= lim)
+    if (i<1 || i > lim)
         cout << "Linha invalida" << endl;
-    if (j<0 || j >= lim)
+    if (j<1 || j > lim)
         cout << "Coluna invalida" << endl;
-    if (i>=0 && i < lim && j>=0 && j < lim)
+    if (i>0 && i <= lim && j>0 && j <= lim)
     {
-        cout << "Ninho criado em X:" << i << " Y:" <<j << endl;
+        Ninho *n = nullptr;
+        n= new Ninho(i,j,nenergia,&m);
+        m.acrescentaNinho(n);
     }
 }
 
@@ -135,8 +142,17 @@ void Simulacao::criaFormigas(int i, string a, int j){
         cout << i << " formigas do tipo " << a << " foram acrescentadas ao ninho " << j << endl;
 }
 
-void Simulacao::tempo(){
+void Simulacao::tempo(int i){
+    if (i=0)
+        cout << "Nao podes ficar parado no tempo, segue em frente" << endl;
+    else if (i<0)
+    {
+        
+    }
+    else if (i>1)
+    {
     
+    }
 }
 
 void Simulacao::listaMundo(){
