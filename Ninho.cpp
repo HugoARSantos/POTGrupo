@@ -9,8 +9,8 @@
 using namespace std;
 int Ninho::sequencia=1;
 Ninho::Ninho(int xx,int yy,int e,const Mundo * m):mundo(m) {
-    x=xx-1;
-    y=yy-1;
+    x=xx;
+    y=yy;
     energia_inicial=energia=e;
     id=sequencia;
     sequencia++;

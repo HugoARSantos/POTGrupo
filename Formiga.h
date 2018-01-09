@@ -25,7 +25,7 @@ class Formiga {
         static int sequencia;
 public:
     Formiga(int posx,int posy,const Ninho * n,int e=0,int rv=0,int rm=0,char c='F')
-    :ninho(n),x(posx-1),y(posy-1),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c){
+    :ninho(n),x(posx),y(posy),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c){
         id=sequencia;
         sequencia++;}
         

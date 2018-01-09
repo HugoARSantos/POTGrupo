@@ -70,7 +70,7 @@ string Mundo::listaPosicao(int x, int y) const{
 }
 int Mundo::VerificaPosicao(int xx, int yy){
 
-    if(tab[xx][yy]=='-'){
+    if(tab[xx-1][yy-1]=='-'){
         return 1;}
     else
         
@@ -88,7 +88,7 @@ void Mundo::preencheMatriz(){
       for(int i=0;i<migalhas.size();++i){
            auxx = migalhas[i]->getPosX();
            auxy = migalhas[i]->getPosY();
-           tab[auxx][auxy]='c';
+           tab[auxx-1][auxy-1]='c';
     }
     for(int i =0;i<ninhos.size();i++){
          auxF=ninhos[i]->gettamanhoVetor();
@@ -96,7 +96,7 @@ void Mundo::preencheMatriz(){
            
            auxx = ninhos[i]->retornaPosxy(j,0);
            auxy=ninhos[i]->retornaPosxy(j,1);
-           tab[auxx][auxy]='E';
+           tab[auxx-1][auxy-1]='E';
 
         
       }}
@@ -105,7 +105,7 @@ void Mundo::preencheMatriz(){
         
         auxy=ninhos[i]->getY();
        
-        tab[auxx][auxy]='N';
+        tab[auxx-1][auxy-1]='N';
     }
       
   
@@ -148,7 +148,7 @@ string Mundo::getAsString() const{
     }
     
         /*for(int k=0;k<migalhas.size();k++){
-        oss<<migalhas[k]->getAsString();
+        oss<<migalhas[k]->g1etAsString();
      
     }*/
     return oss.str();
@@ -169,8 +169,8 @@ void Mundo::adicionaMigalhas(int ee,int xx){
     //cout << "yo";
     for (int i=0;i<aux;i++){
         do{
-            auxx=rand()%dim;
-            auxy=rand()%dim;
+            auxx=rand()%dim+1;
+            auxy=rand()%dim+1;
         }while(VerificaPosicao(auxx,auxy)==-1);
          Migalha *m= nullptr;
          //cout << i;
