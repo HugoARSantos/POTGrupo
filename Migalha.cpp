@@ -16,6 +16,7 @@
 
 
 Migalha::Migalha(const Migalha& orig) {
+    *this=orig;
 }
 
 Migalha::~Migalha() {

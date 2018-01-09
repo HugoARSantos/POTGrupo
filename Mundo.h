@@ -20,13 +20,16 @@ class Mundo {
     vector<Migalha *> migalhas;
     char **tab;
     int pesquisa(int idd)const;
+    int calculaQuantasMigalhas(int x);
+    int nEspacosVazios();
 public:
     
-    Mundo(int x,int pMigalhas);
+    Mundo(int x,int pMigalhas,int e);
     Mundo(int x){x=dim;}
     void MostraMundo();
     Mundo(const Mundo& orig);
     void preencheMatriz();
+    void adicionaMigalhas(int e,int xx);
     bool acrescentaNinho(Ninho * ninho);
     bool acrescentaFormiga(Formiga *f,int id);
     int getDim()const{return dim;}
