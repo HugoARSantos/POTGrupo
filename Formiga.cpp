@@ -19,7 +19,7 @@ Formiga::~Formiga() {
 }
 string Formiga ::  getAsString()const{
     ostringstream oss;
-    oss << "A Formiga "<<id<<" do tipo "<<tipo<<"\nEsta na posicao("<<x<<"/"<<y<<")e tem "<<energia<< " de energia"<<endl;
+    oss << "A Formiga "<<id<<" do tipo "<<tipo<<"\nEsta na posicao("<<x+1<<"/"<<y+1<<")e tem "<<energia<< " de energia"<<endl;
     return oss.str();
 }
 
@@ -39,7 +39,7 @@ int Formiga :: regraPasseia(){
 
     }
    
-    while(x+auxx<0 ||y+auxy<0 ||x+auxx>a ||y+auxy>a);
+    while(x+auxx<0 ||y+auxy<0 ||x+auxx>a-1 ||y+auxy>a-1);
     
     
      

@@ -13,22 +13,18 @@
 
 #include "Simulacao.h"
 
-Simulacao::Simulacao(int l, int n, int me, int e, int t, int p ,int nm) {
-    //Mundo m(l);
+Simulacao::Simulacao(int l, int n, int me, int e, int t, int p ,int nm)/*:m(l,p,me)*/ {
     lim = l;
     nenergia = n;                //Energia inicial dos ninhos
-    menergia = me;         //Energia inicial das migalhas
+    menergia = me;               //Energia inicial das migalhas
     energianovaformiga = e;      //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
     transferir = t;              //Unidade de energia transferida entre ninho e formiga por iteração
     percentagem = p;             //Posiçoes vazias ocupadas por migalhas ao inicio
-    nmigalhas = nm;               //maximo de migalhas criadas a cada instance
+    nmigalhas = nm;              //maximo de migalhas criadas a cada instance
 }
 
-Simulacao::Simulacao(const Simulacao& orig) {
-}
-
-Simulacao::~Simulacao() {
-}
+Simulacao::~Simulacao(){
+ }
 
 int Simulacao::simula(){
     string op,nficheiro;
@@ -37,6 +33,8 @@ int Simulacao::simula(){
     bool run = true;
     do{
     system("cls");
+//    m.preencheMatriz();
+//    cout << m;
     cout << "Introduza um comando: ";
     getline(cin, op);
     
@@ -83,7 +81,8 @@ int Simulacao::simula(){
     else if (op == "ninho"){
         iss >> i;
         iss >> j;
-        criaNinho(i,j);
+//        Ninho n(i,j,nenergia,&m);
+//        m.acrescentaNinho(&n);
     }
     
     else if (op == "criaf"){

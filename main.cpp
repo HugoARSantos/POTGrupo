@@ -20,11 +20,15 @@ int main() {
     //lista posicao ??????????
     Comandos consola;
     int i;
-    Mundo m(10,10,10);
+    int l = 10;
+    int me = 50;
+    int pm = 50;
+   
+    Mundo m(l,pm,me);
     
     Ninho n(5,5,10,&m);
     Ninho n1(1,1,2,&m);
-     Exploradora a(2,2,&n);
+    Exploradora a(2,2,&n);
     Exploradora b(4,4,&n);
     Exploradora c(6,6);
     n.acrescentaFormiga(&a);
@@ -33,7 +37,7 @@ int main() {
     m.acrescentaNinho(&n);
     m.acrescentaNinho(&n1);
     m.acrescentaFormiga(&c,1);
-//    m.preencheMatriz();
+    //m.preencheMatriz();
     //n.removerFormiga(3);
 //    m.preencheMatriz();
     //cout <<m.getAsString();

@@ -13,6 +13,10 @@
 
 #ifndef MIGALHA_H
 #define MIGALHA_H
+#include <string>
+#include <iostream>
+
+using namespace std;
 
 class Migalha {
     int energia_incial;
@@ -25,6 +29,7 @@ public:
         energia_incial=e;
         posx=x;
         posy=y;
+        //cout << "Migalha construida" << endl;
     }
     Migalha(const Migalha& orig);
     void setPosx(int x);
@@ -34,7 +39,7 @@ public:
     bool verificaEnergia();
     bool removeEnergia(int x);
     virtual ~Migalha();
-
+    string getAsString();
 
 };
 

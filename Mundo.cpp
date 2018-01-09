@@ -30,9 +30,9 @@ Mundo::Mundo(int x,int pMigalhas,int e ){
     }
     
 int Mundo::calculaQuantasMigalhas(int x){
-    int aux=nEspacosVazios();
-    return aux/x;
-
+    int aux=x*nEspacosVazios()/100;
+    cout << "Espacos vazios:" << aux << endl;
+    return aux;
 }
 int Mundo::nEspacosVazios(){
     int cont=0;
@@ -87,8 +87,8 @@ void Mundo::preencheMatriz(){
         }
       for(int i=0;i<migalhas.size();++i){
            auxx = migalhas[i]->getPosX();
-           auxy=migalhas[i]->getPosY();
-           tab[auxx-1][auxy-1]='c';
+           auxy = migalhas[i]->getPosY();
+           tab[auxx][auxy]='c';
     }
     for(int i =0;i<ninhos.size();i++){
          auxF=ninhos[i]->gettamanhoVetor();
@@ -96,7 +96,7 @@ void Mundo::preencheMatriz(){
            
            auxx = ninhos[i]->retornaPosxy(j,0);
            auxy=ninhos[i]->retornaPosxy(j,1);
-           tab[auxx-1][auxy-1]='E';
+           tab[auxx][auxy]='E';
 
         
       }}
@@ -105,7 +105,7 @@ void Mundo::preencheMatriz(){
         
         auxy=ninhos[i]->getY();
        
-        tab[auxx-1][auxy-1]='N';
+        tab[auxx][auxy]='N';
     }
       
   
@@ -146,6 +146,11 @@ string Mundo::getAsString() const{
         oss<<ninhos[k]->getAsString();
      
     }
+    
+        /*for(int k=0;k<migalhas.size();k++){
+        oss<<migalhas[k]->getAsString();
+     
+    }*/
     return oss.str();
 }
 Mundo::~Mundo() {
@@ -161,21 +166,25 @@ void Mundo::adicionaMigalhas(int ee,int xx){
    
     int aux=calculaQuantasMigalhas(xx);
     int auxx,auxy;
-    for (int i=0;i<aux;++i){
+    //cout << "yo";
+    for (int i=0;i<aux;i++){
         do{
             auxx=rand()%dim;
             auxy=rand()%dim;
         }while(VerificaPosicao(auxx,auxy)==-1);
-         Migalha *m=0;
+         Migalha *m= nullptr;
+         //cout << i;
          m =new Migalha(ee,auxx,auxy);
+         //cout << i*10;
         
         
         migalhas.push_back(m);
-        
+        //cout << "WHY HAVE YOU FORSAKEN ME";
     
     }
-        
+//    prencheMatriz();   
 }
+
 void Mundo::verificaMigalhas(){
     for(int i=0;i<migalhas.size();++i){
     if(migalhas[i]->verificaEnergia()==true){

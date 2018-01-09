@@ -12,7 +12,7 @@
  */
 
 #include "Migalha.h"
-
+#include <sstream>
 
 
 Migalha::Migalha(const Migalha& orig) {
@@ -20,6 +20,7 @@ Migalha::Migalha(const Migalha& orig) {
 }
 
 Migalha::~Migalha() {
+    delete this;
 }
 bool Migalha::verificaEnergia(){
     if(energia_incial/energia<10)
@@ -34,4 +35,10 @@ bool Migalha::removeEnergia(int x){
         return true;
     }
     return false;
+}
+
+string Migalha::getAsString(){
+    ostringstream oss;
+    oss << "\nPosX:" << posx << " PosY:" << posy << endl;
+    return oss.str();
 }
