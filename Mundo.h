@@ -30,6 +30,7 @@ public:
     Mundo(const Mundo& orig);
     void preencheMatriz();
     void adicionaMigalhas(int e,int xx);
+    void verificaMigalhas();
     bool acrescentaNinho(Ninho * ninho);
     bool acrescentaFormiga(Formiga *f,int id);
     int getDim()const{return dim;}

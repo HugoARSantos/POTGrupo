@@ -23,6 +23,7 @@ Migalha::~Migalha() {
 }
 bool Migalha::verificaEnergia(){
     if(energia_incial/energia<10)
+        delete this;
         return true;
     return false;
 }
