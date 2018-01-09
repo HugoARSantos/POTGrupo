@@ -20,9 +20,11 @@ class Migalha {
     int posx;
     int posy;
 public:
-    Migalha(int e){
+    Migalha(int e,int x,int y){
         energia=e;
         energia_incial=e;
+        posx=x;
+        posy=y;
     }
     Migalha(const Migalha& orig);
     void setPosx(int x);

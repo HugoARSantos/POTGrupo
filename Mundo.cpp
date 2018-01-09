@@ -7,11 +7,15 @@
 #include "Exploradora.h"
 #include "Formiga.h"
 #include "Ninho.h"
+#include "Migalha.h"
 #include <sstream>
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <stdlib.h>
 using namespace std;
 
-Mundo::Mundo(int x,int pMigalhas ){
+Mundo::Mundo(int x,int pMigalhas,int e ){
     dim=x;
     tab =new char *[dim];
     for(int i=0;i<dim;++i){
@@ -21,9 +25,24 @@ Mundo::Mundo(int x,int pMigalhas ){
         for(int j= 0;j<dim;++j){
             tab[i][j]='-';
         }
+    adicionaMigalhas(e,pMigalhas);
+    preencheMatriz();
     }
     
+int Mundo::calculaQuantasMigalhas(int x){
+    int aux=nEspacosVazios();
+    return aux/x;
 
+}
+int Mundo::nEspacosVazios(){
+    int cont=0;
+    for(int i=0;i<dim;++i)
+        for(int j=0;j<dim;++j){
+            if(tab[i][j]== '-')
+                cont++;
+                     }
+    return cont;
+}
 Mundo::Mundo(const Mundo& orig) {
 }
 void Mundo::MostraMundo(){
@@ -63,17 +82,15 @@ void Mundo::preencheMatriz(){
     int auxy;
     int auxF;
      for(int i=0;i<dim;++i)
-        for(int j= 0;j<dim;++j){
+        for(int j=0;j<dim;++j){
             tab[i][j]='-';
         }
-    for( int i =0;i<ninhos.size();i++){
-        auxx=ninhos[i]->getX();
-        
-        auxy=ninhos[i]->getY();
-       
-        tab[auxx-1][auxy-1]='N';
+      for(int i=0;i<migalhas.size();++i){
+           auxx = migalhas[i]->getPosX();
+           auxy=migalhas[i]->getPosY();
+           tab[auxx-1][auxy-1]='c';
     }
-      for(int i =0;i<ninhos.size();i++){
+    for(int i =0;i<ninhos.size();i++){
          auxF=ninhos[i]->gettamanhoVetor();
         for(int j=0;j<auxF;j++){
            
@@ -83,6 +100,15 @@ void Mundo::preencheMatriz(){
 
         
       }}
+    for( int i =0;i<ninhos.size();i++){
+        auxx=ninhos[i]->getX();
+        
+        auxy=ninhos[i]->getY();
+       
+        tab[auxx-1][auxy-1]='N';
+    }
+      
+  
 }
     
     //}}
@@ -130,6 +156,25 @@ Mundo::~Mundo() {
     
     
     delete tab;
+}
+void Mundo::adicionaMigalhas(int ee,int xx){
+   
+    int aux=calculaQuantasMigalhas(xx);
+    int auxx,auxy;
+    for (int i=0;i<aux;++i){
+        do{
+            auxx=rand()%dim;
+            auxy=rand()%dim;
+        }while(VerificaPosicao(auxx,auxy)==-1);
+         Migalha *m=0;
+         m =new Migalha(ee,auxx,auxy);
+        
+        
+        migalhas.push_back(m);
+        
+    
+    }
+        
 }
 ostream & operator<<(ostream & saida, const Mundo & x) {
     saida << x.getAsString();

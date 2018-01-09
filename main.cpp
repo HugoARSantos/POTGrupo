@@ -20,7 +20,7 @@ int main() {
     //lista posicao ??????????
     Comandos consola;
     int i;
-    Mundo m(15,1);
+    Mundo m(10,10,10);
     
     Ninho n(5,5,10,&m);
     Ninho n1(1,1,2,&m);
@@ -33,14 +33,15 @@ int main() {
     m.acrescentaNinho(&n);
     m.acrescentaNinho(&n1);
     m.acrescentaFormiga(&c,1);
-    m.preencheMatriz();
+//    m.preencheMatriz();
     //n.removerFormiga(3);
-    m.preencheMatriz();
+//    m.preencheMatriz();
     //cout <<m.getAsString();
     //cout <<m.listaPosicao(1,1);
     a.regraPasseia();
     b.regraPasseia();
     c.regraPasseia();
+    system("cls");
     m.preencheMatriz();
     //cout <<n.getAsString();
     cout<<m;
