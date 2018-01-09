@@ -23,6 +23,9 @@
 #include <sstream>
 #include <fstream>
 #include<stdlib.h>
+#include <conio.h>
+#include <stdio.h>
+
 
 class Simulacao {
 public:

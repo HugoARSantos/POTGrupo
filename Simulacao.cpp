@@ -13,11 +13,11 @@
 
 #include "Simulacao.h"
 
-Simulacao::Simulacao(int l, int n, int menergia, int e, int t, int p ,int nm) {
-    Mundo m(l);
+Simulacao::Simulacao(int l, int n, int me, int e, int t, int p ,int nm) {
+    //Mundo m(l);
     lim = l;
     nenergia = n;                //Energia inicial dos ninhos
-    menergia = menergia;         //Energia inicial das migalhas
+    menergia = me;         //Energia inicial das migalhas
     energianovaformiga = e;      //Percentagem de energia(vezes a inicial) que o ninho precisa para criar uma nova formiga
     transferir = t;              //Unidade de energia transferida entre ninho e formiga por iteração
     percentagem = p;             //Posiçoes vazias ocupadas por migalhas ao inicio

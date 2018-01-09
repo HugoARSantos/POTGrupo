@@ -15,6 +15,7 @@
 #include <sstream>
 #include <fstream>
 #include<stdlib.h>
+#include <conio.h>
 
 using namespace std;
 
@@ -40,7 +41,7 @@ public:
     void defMigalhasIniciais(int i);
     void defEnergiaMigalhas(int i);
     void defNumeroMigalhas(int i);
-    void executa(string ficheiro);
+    int executa(string ficheiro);
     int inicio();
 
     int simulacao();
