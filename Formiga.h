@@ -38,7 +38,7 @@ public:
    
     int getX(){return x;}
     int getY(){return y;}
-    
+    char geTipo(){return tipo;}
     int getEnergiaInicial(){return energia_inicial;}
     int getEnergia(){return energia;}
     int getId()const{return id;};

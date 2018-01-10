@@ -72,6 +72,12 @@ int Ninho ::retornaPosxy(int z, int j){
             return formigas[i]->getY();
     }
 }
+char Ninho::retornaTipo(int x, int y){
+    for (int i=0;i<formigas.size();i++){
+        if(formigas[i]->getX()==x && formigas[i]->getY()==y)
+            return formigas[i]->geTipo();
+    }
+}
 Ninho::~Ninho() {
     
 }

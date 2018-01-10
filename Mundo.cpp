@@ -85,6 +85,7 @@ void Mundo::preencheMatriz(){
     int auxx;
     int auxy;
     int auxF;
+    char auxC;
      for(int i=0;i<dim;++i){
         for(int j=0;j<dim;++j){
             tab[i][j]='-';
@@ -103,7 +104,8 @@ void Mundo::preencheMatriz(){
            
            auxx = ninhos[i]->retornaPosxy(j,0);
            auxy = ninhos[i]->retornaPosxy(j,1);
-           tab[auxx-1][auxy-1]='E';
+           auxC=ninhos[i]->retornaTipo(auxx,auxy);
+           tab[auxx-1][auxy-1]=auxC;
 
         
       }}
