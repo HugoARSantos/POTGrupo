@@ -102,11 +102,12 @@ void Mundo::preencheMatriz(){
         for(int j=0;j<auxF;j++){
            
            auxx = ninhos[i]->retornaPosxy(j,0);
-           auxy=ninhos[i]->retornaPosxy(j,1);
+           auxy = ninhos[i]->retornaPosxy(j,1);
            tab[auxx-1][auxy-1]='E';
 
         
       }}
+        
     for( int i =0;i<ninhos.size();i++){
         auxx=ninhos[i]->getX();
         
@@ -192,12 +193,8 @@ void Mundo::adicionaMigalhas(int ee,int xx){
    
 //    int aux=calculaQuantasMigalhas(xx);
     int aux = dim*dim*xx/100;
-//    cout <<aux<<endl;
-    
-//    cout<<dim<<"\n"<<aux;
+
     int auxx,auxy;
-//    //cout << "yo";
-    //cout<<aux<<endl;
     for (int i=0;i<aux;i++){
        
         do{
@@ -268,4 +265,39 @@ void Mundo::acrescentaMigalha(int e,int x,int y){
         Migalha *m= nullptr;
         m =new Migalha(e,x,y);        
         migalhas.push_back(m);
+}
+
+void Mundo::acrescentaFormigas(int idn,char t,int q){
+    int x, y;
+//    Ninho *n = nullptr;
+//    for(int k=0;k<ninhos.size();k++){
+//        if (ninhos[k]->getId() == idn)
+//            Ninho *n = ninhos[k]->getPonteiro();
+//    }
+    
+    for (int i =0; i < q; i++){
+        if (t=='E'){
+            x = rand()% dim+1;
+            y = rand()% dim+1;
+            Exploradora *e= nullptr;
+            e = new Exploradora (x,y);        
+            acrescentaFormiga(e,idn);
+       }
+    }
+}
+
+void Mundo::acrescentaForm(int idn,char tipo, int l,int c){
+    Ninho *n = nullptr;
+    for(int k=0;k<ninhos.size();k++){
+        if (ninhos[k]->getId() == idn)
+            Ninho *n = ninhos[k]->getPonteiro();
+    }
+        
+        if (tipo=='E'){
+            Exploradora *e= nullptr;
+            e = new Exploradora (l,c,n);
+            cout << e->getAsString();
+            acrescentaFormiga(e,idn);
+            getch();
+        }
 }

@@ -31,6 +31,8 @@ public:
     string MostraMundo();
     string ListaNinho(int i);
     void acrescentaEnergiaNinho(int i, int j);
+    void acrescentaFormigas(int idn, char tipo, int quant);
+    void acrescentaForm(int idn, char tipo, int l,int c);
     Mundo(const Mundo& orig);
     void preencheMatriz();
     void adicionaMigalhas(int e,int xx);

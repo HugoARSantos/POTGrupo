@@ -29,7 +29,7 @@ Simulacao::~Simulacao(){
 
 int Simulacao::simula(){
     string op,nficheiro;
-    string a,b,c;
+    char a,b,c;
     int i, j, k, l ;
     bool run = true;
     
@@ -69,9 +69,9 @@ int Simulacao::simula(){
     k=-1;
     j=-1;
     l=-1;
-    a="";
-    b="";
-    c="";
+    a=' ';
+    b=' ';
+    c=' ';
     nficheiro="";
     istringstream iss(op);
     iss >> op;        
@@ -126,11 +126,11 @@ int Simulacao::simula(){
         criaFormigas(i,a,j);
     }
         else if (op == "cria1"){
-        iss >> i;
         iss >> a;
+        iss >> i;
         iss >> j;
         iss >> k;
-        criaFor(1,a,j,k);
+        criaFor(i,a,j,k);
     }
     else if (op == "tempo"){
         iss >> i;
@@ -206,28 +206,60 @@ void Simulacao::criaNinho(int i, int j){
     }
 }
 
-void Simulacao::criaFormigas(int i, string a, int j){
+void Simulacao::criaFormigas(int i, char a, int j){
     int nninhos = m.getNninhos();
-    if (i<1)
+    if (i<1){
         cout << "Introduza um numero de formigas valido" << endl;
-    if (a != "E"||a != "E"||a != "E"||a != "E"||a != "E"||a != "E")
+        getch();
+    }
+    if (a != 'C' && a != 'V' && a != 'A' && a!= 'E' &&a != 'S'){
         cout << "Introduza um tipo valido" << endl;
-    if (j > nninhos || j < 1)
+        getch();
+    }
+    if (j > nninhos || j < 1){
         cout << "O ninho que indicou nao existe" << endl;
-    if (i>=1 && a== "E" && j <= nninhos && j>0)
-        cout << i << " formigas do tipo " << a << " foram acrescentadas ao ninho " << j << endl;
+        getch();
+    }
+
+    if (i>=1 && (a == 'C'||a == 'V'||a == 'A'||a == 'E'||a == 'S') && j <= nninhos && j>0)
+        m.acrescentaFormigas(j,a,i);
 }
 
-void Simulacao::criaFor(int i, string a, int j, int k){
+void Simulacao::criaFor(int i, char a, int j, int k){
+    int nninhos = m.getNninhos();
+    if (a != 'C' && a != 'V' && a != 'A' && a!= 'E' &&a != 'S'){
+        cout << "Introduza um tipo valido" << endl;
+        getch();
+    }
+    if (i > nninhos || i < 1){
+        cout << "O ninho que indicou nao existe" << endl;
+        getch();
+    }
     
-};
+    if (j<1 || j > lim){
+        cout << "Linha invalida" << endl;
+        getch();
+    }
+    if (k<1 || k > lim){
+        cout << "Coluna invalida" << endl;
+        getch();
+    }
+    
+    if (j>0 && j <= lim && k>0 && k <= lim && (a == 'C'||a == 'V'||a == 'A'||a == 'E'||a == 'S') && i <= nninhos && i>0)
+        m.acrescentaForm(i,a,j,k);
+}
 
 void Simulacao::tempo(int i){
     if (i==0){
         cout << "Nao podes ficar parado no tempo, segue em frente" << endl;
+        getch();
     }
-    else if (i<0)
-    {
+    else if (i < 0){
+        cout << "Nao podes voltar atras no tempo, segue em frente" << endl;
+        getch();
+    }
+    
+    /*{
         int novas = rand()% nmigalhas;
         
         for (int aux=0;aux<novas;aux++){
@@ -236,8 +268,8 @@ void Simulacao::tempo(int i){
             m.acrescentaMigalha(menergia,j,k);
         }
 
-    }
-    else if (i>1)
+    }*/
+    else if (i>0)
     {
     
     }
