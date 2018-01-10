@@ -33,17 +33,38 @@ int Simulacao::simula(){
     int i, j, k, l ;
     bool run = true;
     
+    ofstream ofs;
+    ofs.open("default.txt");
+    ofs << lim;
+    ofs <<"\n";
+    ofs << nenergia;
+    ofs <<"\n";
+    ofs << menergia;
+    ofs <<"\n";
+    ofs << energianovaformiga;
+    ofs <<"\n";
+    ofs << transferir;
+    ofs <<"\n";
+    ofs << percentagem;
+    ofs <<"\n";
+    ofs << nmigalhas;
+
+    ofs.close();
+
     do{
-    system("cls");
-    
     m.preencheMatriz();
-    cout << m.MostraMundo();
+    system("cls");
+    cout <<"\b" << m.MostraMundo();
     cout << "Introduza um comando: ";
     getline(cin, op);
     i=-1;
     k=-1;
     j=-1;
     l=-1;
+    a = "";
+    b = "";
+    c = "";
+    nficheiro="";
     istringstream iss(op);
     iss >> op;        
     if (op == "defen"){
@@ -125,13 +146,27 @@ int Simulacao::simula(){
         addEnergiaNinho(i,j);
     }
     
-    /*else if (op=="migalha")
-    else if (op=="energformiga")
-    else if (op=="mata")
-    else if (op=="inseticida")
-    else if (op=="guarda")
-    else if (op=="muda")
-    else if (op=="apaga")*/
+    else if (op=="migalha"){
+        iss >> i;
+        iss >> j;
+        criaMigalha(i,j);
+    }
+//    else if (op=="energformiga")
+//    else if (op=="mata")
+//    else if (op=="inseticida")
+//    else if (op=="guarda")
+//    else if (op=="muda")
+    
+    else if (op=="apaga"){
+        iss >> nficheiro;
+        if (apagaMundo(nficheiro)==1){
+            cout << "O programa ira agora regressar a configuracao, prima qualquer tecla para continuar";
+            getch();
+            system("cls");
+            return 0;
+        }
+    }
+    
     else {
         cout<< "Por favor use um comando correcto.\nPressione qualquer tecla para continuar";
         getch();
@@ -280,25 +315,47 @@ void Simulacao::addEnergiaNinho(int i, int j){
         m.acrescentaEnergiaNinho(i,j);
 }
 
-void mataFormiga(int i, int j){
-};
-void insecticida(int i){
-};
-void listaMundo(){
-    
-};
-void listaNinho(int i){
-    
-};
-void listaPosicao(int i,int j){
-    
-};
-void guardaMundo(string nome){
-    
-};
-void mudaMundo(string nome){
-    
-};
-void apagaMundo(string nome){
-    
+void Simulacao::criaMigalha(int i, int j){
+    if (i<1 || i > lim)
+        cout << "Linha invalida" << endl;
+    if (j<1 || j > lim)
+        cout << "Coluna invalida" << endl;
+    if (i>0 && i <= lim && j>0 && j <= lim)
+    {
+        //m.acrescentaMigalha(i,j);
+    }
+}
+//void mataFormiga(int i, int j){
+//};
+//void insecticida(int i){
+//};
+//void listaMundo(){
+//    
+//};
+//void listaNinho(int i){
+//    
+//};
+//void listaPosicao(int i,int j){
+//    
+//};
+//void guardaMundo(string nome){
+//    
+//};
+//void mudaMundo(string nome){
+//    
+//};
+
+int Simulacao::apagaMundo(string nome){
+    if (remove((nome+".txt").c_str()) !=0){
+            cout << "Nao existe nenhum ficheiro com este nome";
+            getch();
+    }
+        else {
+            cout << nome << " foi apagado com sucesso" << endl;;
+            getch();
+    }
+
+    if (nome=="default")
+        return 1;
+    return 0;
 };

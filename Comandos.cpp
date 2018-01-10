@@ -161,22 +161,23 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
 }                                 //instance varia entre 0 e este valor
 
 int Comandos::executa(string ficheiro){
-    ifstream ifs;
-    ifs.open(ficheiro);
-    ifs >> lim;
-    ifs >> nenergia;
-    ifs >> menergia;
-    ifs >> energianovaformiga;
-    ifs >> transferir;
-    ifs >> percentagem;
-    ifs >> nmigalhas;
-       
-    ifs.close();
+        ifstream ifs;
+        ifs.open(ficheiro+".txt");
+        ifs >> lim;
+        ifs >> nenergia;
+        ifs >> menergia;
+        ifs >> energianovaformiga;
+        ifs >> transferir;
+        ifs >> percentagem;
+        ifs >> nmigalhas;
+
+        ifs.close();
     
     if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
        && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
-    {cout << "Ola";
-        return 1;}
+    {
+        return 1;
+    }
     else{
         if (lim<10) cout <<"Limite do mundo nao definido" << endl;
         if (nenergia< 1) cout << "Energia dos ninhos nao definida" << endl;

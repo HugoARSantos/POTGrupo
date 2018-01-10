@@ -66,7 +66,7 @@ public:
     void listaPosicao(int i,int j);
     void guardaMundo(string nome);
     void mudaMundo(string nome);
-    void apagaMundo(string nome);
+    int apagaMundo(string nome);
     void sair();
 
 };
