@@ -5,14 +5,19 @@
 
 #include "Mundo.h"
 #include "Exploradora.h"
+#include "Cuidadora.h"
 #include "Formiga.h"
 #include "Ninho.h"
 #include "Migalha.h"
+#include "Assaltante.h"
+#include "Surpresa.h"
+#include "Vigilante.h"
 #include <sstream>
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <stdlib.h>
+
 using namespace std;
 
 Mundo::Mundo(int x,int pMigalhas,int e ){
@@ -153,7 +158,7 @@ string Mundo::getAsString() const{
       
     oss<<"\nElementos\n";
     for(int k=0;k<ninhos.size();k++){
-        oss<<ninhos[k]->getAsStringTwo();
+        oss<<ninhos[k]->getAsString();
     }
     
         for(int k=0;k<migalhas.size();k++){
@@ -236,7 +241,7 @@ void Mundo::verificaMigalhas(){
 //        delete migalhas[i];
 ////        cout<<"yolo";
         migalhas.erase(migalhas.begin()+i);
-          cout<<migalhas.size()<<"\n";//Para concluiur que quando se cria alguma coisa no mundo tem que se remover as migalhas.
+          //cout<<migalhas.size()<<"\n";//Para concluiur que quando se cria alguma coisa no mundo tem que se remover as migalhas.
     }
     
     }
@@ -249,10 +254,12 @@ string Mundo::guardaMundo(){
         oss << "Ninho " <<ninhos[k]->getId() << " " <<ninhos[k]->getX() 
                 << " " <<ninhos[k]->getY() << " " <<ninhos[k]->getEnergia() 
                 << " " <<ninhos[k]->getEnergiaInicial() << endl;
+        oss << ninhos[k]->guardaFormiga();
     }
     
         for(int k=0;k<migalhas.size();k++){
-        oss<<"Migalha " << migalhas[k]->getPosX() << " " << migalhas[k]->getPosY() << " " << migalhas[k]->getEnergia() << endl ;
+        oss<<"Migalha " << migalhas[k]->getPosX() << " " << migalhas[k]->getPosY() << " " 
+                << migalhas[k]->getEnergia() <<" " << migalhas[k]->getEnergiaInicial()<< endl ;
      
     }
     return oss.str();
@@ -286,6 +293,46 @@ void Mundo::acrescentaFormigas(int idn,char t,int q){
             acrescentaFormiga(e,idn);
        }
     }
+    
+    for (int i =0; i < q; i++){
+        if (t=='C'){
+            x = rand()% dim+1;
+            y = rand()% dim+1;
+            Cuidadora *c= nullptr;
+            c = new Cuidadora (x,y);        
+            acrescentaFormiga(c,idn);
+       }
+    }
+    
+        for (int i =0; i < q; i++){
+        if (t=='V'){
+            x = rand()% dim+1;
+            y = rand()% dim+1;
+            Vigilante *v= nullptr;
+            v = new Vigilante (x,y);        
+            acrescentaFormiga(v,idn);
+       }
+    }
+    
+        for (int i =0; i < q; i++){
+        if (t=='A'){
+            x = rand()% dim+1;
+            y = rand()% dim+1;
+            Assaltante *a= nullptr;
+            a = new Assaltante (x,y);        
+            acrescentaFormiga(a,idn);
+       }
+    }
+    
+        for (int i =0; i < q; i++){
+        if (t=='S'){
+            x = rand()% dim+1;
+            y = rand()% dim+1;
+            Surpresa *s= nullptr;
+            s = new Surpresa (x,y);        
+            acrescentaFormiga(s,idn);
+       }
+    }
 }
 
 void Mundo::acrescentaForm(int idn,char tipo, int l,int c){
@@ -298,8 +345,45 @@ void Mundo::acrescentaForm(int idn,char tipo, int l,int c){
         if (tipo=='E'){
             Exploradora *e= nullptr;
             e = new Exploradora (l,c,n);
-            cout << e->getAsString();
             acrescentaFormiga(e,idn);
-            getch();
         }
+    
+        if (tipo=='C'){
+            Cuidadora *cui= nullptr;
+            cui = new Cuidadora(l,c,n);
+            acrescentaFormiga(cui,idn);
+        }
+    
+        if (tipo=='A'){
+            Assaltante *a= nullptr;
+            a = new Assaltante(l,c,n);
+            acrescentaFormiga(a,idn);
+        }
+    
+        if (tipo=='V'){
+            Vigilante *v= nullptr;
+            v = new Vigilante(l,c,n);
+            acrescentaFormiga(v,idn);
+        }
+    
+        if (tipo=='S'){
+            Surpresa *s= nullptr;
+            s = new Surpresa (l,c,n);        
+            acrescentaFormiga(s,idn);
+        }
+}
+
+void Mundo::avanca(){
+
+        
+    for( int i =0;i<ninhos.size();i++){
+        ninhos[i]->mexeFormiga();
+    }
+    
+    for(int i=0;i<migalhas.size();i++){
+        migalhas[i]->setEnergia(- 1);
+        verificaMigalhas();
+    }
+
+    
 }

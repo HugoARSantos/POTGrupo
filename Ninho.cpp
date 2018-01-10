@@ -104,3 +104,21 @@ ostream & operator<<(ostream & saida, const Ninho & x) {
     saida << x.getAsString();
     return saida;
 }
+
+void Ninho::mexeFormiga(){
+    for (int i = 0; i < formigas.size();i++){
+        formigas[i]->regraPasseia();
+    }
+}
+
+string Ninho::guardaFormiga(){
+    ostringstream oss;
+    for(int k=0;k<formigas.size();k++){
+        oss << "Formiga " <<formigas[k]->getId() << " " <<formigas[k]->geTipo() << " " 
+        <<formigas[k]->getX() << " " <<formigas[k]->getY() 
+        << " " <<formigas[k]->getEnergia() 
+        << " " <<formigas[k]->getEnergiaInicial()
+        << " " <<getId() << endl;
+    }
+    return oss.str();
+}

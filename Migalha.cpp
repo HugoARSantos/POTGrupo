@@ -29,7 +29,7 @@ bool Migalha::verificaEnergia(){
     x=energia/energia_inicial;
     
     
-    if((energia/energia_inicial)< 0.1){
+    if((100*energia/energia_inicial)< 10){
         
         return true;
        

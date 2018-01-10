@@ -46,6 +46,8 @@ public:
     void setEnergia(int j){energia+=j;};
     int getEnergiaMigalha(int x,int y);
     bool verificaMigalha(int x,int y);
+    void mexeFormiga();
+    string guardaFormiga();
 };
 ostream & operator<<(ostream & saida, const Ninho & x);
 

@@ -36,6 +36,7 @@ public:
     void setPosy(int y);
     void setEnergia(int x);
     int getEnergia(){return energia;}
+    int getEnergiaInicial(){return energia_inicial;}
     int getPosX(){return posx;}
     int getPosY(){return posy;}
     bool verificaEnergia();

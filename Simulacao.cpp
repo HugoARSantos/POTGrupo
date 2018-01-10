@@ -1,15 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   Simulacao.cpp
- * Author: Hugo
- * 
- * Created on 17 de Dezembro de 2017, 17:36
- */
 
 #include "Simulacao.h"
 
@@ -133,9 +121,14 @@ int Simulacao::simula(){
         criaFor(i,a,j,k);
     }
     else if (op == "tempo"){
-        iss >> i;
-        tempo(i);
+        if (iss.rdbuf()->in_avail()){
+                iss >> i;
+                tempo(i);
+        }
+        else
+            tempo(1);
     }
+    
     else if (op == "listamundo"){
         listaMundo();
     }
@@ -259,7 +252,12 @@ void Simulacao::tempo(int i){
         getch();
     }
     
-    /*{
+    else if (i>0)
+    {
+        for (int aux = 0; aux < i; aux++){
+                m.avanca();
+        }
+        
         int novas = rand()% nmigalhas;
         
         for (int aux=0;aux<novas;aux++){
@@ -267,11 +265,9 @@ void Simulacao::tempo(int i){
             int k=rand()%lim+1;
             m.acrescentaMigalha(menergia,j,k);
         }
-
-    }*/
-    else if (i>0)
-    {
-    
+        
+        cout << "O mundo avancou " << i << " iteracoes, prima qualquer tecla para continuar";
+        getch();
     }
 }
 
@@ -390,12 +386,6 @@ void Simulacao::criaMigalha(int i, int j){
 //};
 //void insecticida(int i){
 //};
-//void listaMundo(){
-//    
-//};
-//void listaNinho(int i){
-//    
-//};
 //void listaPosicao(int i,int j){
 //    
 //};
@@ -415,6 +405,7 @@ void Simulacao::guardaMundo(string nome){
     ofs << percentagem;
     ofs <<"\n";
     ofs << nmigalhas;
+    ofs <<"\n";
     ofs << m.guardaMundo();
     ofs.close();
 };
