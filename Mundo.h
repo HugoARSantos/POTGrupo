@@ -42,7 +42,7 @@ public:
     virtual ~Mundo();
     int VerificaPosicao(int xx,int yy);
     string getAsString()const;
-    string listaPosicao(int x,int y)const;
+    char listaPosicao(int x,int y);
     int getEnergiaMigalha(int x,int y);
 };
 ostream & operator<<(ostream & saida, const Mundo & x);

@@ -8,7 +8,7 @@
 #include <sstream>
 using namespace std;
 int Ninho::sequencia=1;
-Ninho::Ninho(int xx,int yy,int e,const Mundo * m):mundo(m) {
+Ninho::Ninho(int xx,int yy,int e, Mundo * m):mundo(m) {
     x=xx;
     y=yy;
     energia_inicial=e;
@@ -76,6 +76,12 @@ Ninho::~Ninho() {
 }
 void Ninho::retiraEnergia(){
     energia--;
+}
+int Ninho::getEnergiaMigalha(int x, int y){
+    int aux;
+    aux=mundo->getEnergiaMigalha(x,y);
+    return aux;
+    
 }
 
 ostream & operator<<(ostream & saida, const Ninho & x) {

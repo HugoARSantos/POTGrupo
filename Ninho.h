@@ -20,11 +20,11 @@ class Ninho {
         int energia_inicial;
         int energia;
         vector<Formiga *>formigas;
-         const Mundo * mundo;
+          Mundo * mundo;
         static int sequencia;
         int pesquisa(int idd)const;
 public:
-    Ninho(int xx, int yy,int e,const Mundo *m);
+    Ninho(int xx, int yy,int e, Mundo *m);
     bool acrescentaFormiga(Formiga * formiga);
     bool removerFormiga(int idd);
     int getX(){return x;}
@@ -42,6 +42,7 @@ public:
     Ninho * duplica()const{return new Ninho(*this);}
     int getEnergia(){return energia;};
     void setEnergia(int j){energia+=j;};
+    int getEnergiaMigalha(int x,int y);
 };
 ostream & operator<<(ostream & saida, const Ninho & x);
 

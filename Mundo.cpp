@@ -70,11 +70,9 @@ bool Mundo::acrescentaFormiga(Formiga* f, int id){
     return true;
           
 }
-string Mundo::listaPosicao(int x, int y) const{
+char Mundo::listaPosicao(int x, int y) {
     char i=tab[x][y];
-    if(i=='-')
-        return "Vazia";   
-        return "yolo";
+    return i;
     
 }
 int Mundo::VerificaPosicao(int xx, int yy){
