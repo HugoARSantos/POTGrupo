@@ -216,15 +216,15 @@ void Mundo::adicionaMigalhas(int ee,int xx){
     }
    preencheMatriz();   
 }
-int Mundo::getEnergiaMigalha(int x, int y){
-    int aux;
+int Mundo::getEnergiaMigalha(int x, int y,int pper){
+    int aux,auxx;
    // cout<<"yolo";
     for(int i=0;i<migalhas.size();i++){
         
         if(migalhas[i]->getPosX()==x && migalhas[i]->getPosY()==y){
             aux=migalhas[i]->getEnergia();
-            
-            migalhas[i]->setEnergia(-aux);
+            auxx=aux*pper/100;
+            migalhas[i]->setEnergia(-auxx);
 //            cout<<i<<"yolo\n";
              verificaMigalhas();
             return aux;

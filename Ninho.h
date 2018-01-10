@@ -44,7 +44,7 @@ public:
     Ninho * duplica()const{return new Ninho(*this);}
     int getEnergia(){return energia;};
     void setEnergia(int j){energia+=j;};
-    int getEnergiaMigalha(int x,int y);
+    int getEnergiaMigalha(int x,int y,int per);
     bool verificaMigalha(int x,int y);
     void mexeFormiga();
     string guardaFormiga();

@@ -84,10 +84,10 @@ Ninho::~Ninho() {
 void Ninho::retiraEnergia(){
     energia--;
 }
-int Ninho::getEnergiaMigalha(int x, int y){
+int Ninho::getEnergiaMigalha(int x, int y, int per){
     int aux;
     
-    aux=mundo->getEnergiaMigalha(x,y);
+    aux=mundo->getEnergiaMigalha(x,y,per);
    
     return aux;
     

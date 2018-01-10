@@ -46,7 +46,7 @@ public:
     int VerificaPosicao(int xx,int yy);
     string getAsString()const;
     char listaPosicao(int x,int y);
-    int getEnergiaMigalha(int x,int y);
+    int getEnergiaMigalha(int x,int y,int pper);
     string guardaMundo();
     void avanca();
 };

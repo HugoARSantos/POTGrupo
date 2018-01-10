@@ -34,7 +34,7 @@ void Exploradora::regraComeMigalha(){
     
     n=getNinho();
     
-    e=n->getEnergiaMigalha(getX(),getY());
+    e=n->getEnergiaMigalha(getX(),getY(),100);
    
     SetEnergia(e);
 
