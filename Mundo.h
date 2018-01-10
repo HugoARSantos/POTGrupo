@@ -43,7 +43,7 @@ public:
     int VerificaPosicao(int xx,int yy);
     string getAsString()const;
     string listaPosicao(int x,int y)const;
-
+    int getEnergiaMigalha(int x,int y);
 };
 ostream & operator<<(ostream & saida, const Mundo & x);
 

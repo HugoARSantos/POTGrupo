@@ -211,7 +211,16 @@ void Mundo::adicionaMigalhas(int ee,int xx){
     }
 //    prencheMatriz();   
 }
-
+int Mundo::getEnergiaMigalha(int x, int y){
+    int aux;
+    for(int i=0;i<migalhas.size();i++){
+        if(migalhas[i]->getPosX()==x && migalhas[i]->getPosY()==y){
+            aux=migalhas[i]->getEnergia();
+            migalhas[i]->removeEnergia(aux);
+            return aux;
+        }
+    }
+}
 void Mundo::verificaMigalhas(){
     for(int i=0;i<migalhas.size();++i){
     if(migalhas[i]->verificaEnergia()==true){

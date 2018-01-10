@@ -34,6 +34,7 @@ public:
     Migalha(const Migalha& orig);
     void setPosx(int x);
     void setPosy(int y);
+    int getEnergia(){return energia;}
     int getPosX(){return posx;}
     int getPosY(){return posy;}
     bool verificaEnergia();
