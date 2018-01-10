@@ -83,6 +83,13 @@ int Ninho::getEnergiaMigalha(int x, int y){
     return aux;
     
 }
+bool Ninho::verificaMigalha(int x, int y){
+    char c;
+    c=mundo->listaPosicao(x,y);
+    if(c=='m')
+        return true;
+    return false;
+}
 
 ostream & operator<<(ostream & saida, const Ninho & x) {
     saida << x.getAsString();

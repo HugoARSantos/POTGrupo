@@ -43,6 +43,7 @@ public:
     int getEnergia(){return energia;};
     void setEnergia(int j){energia+=j;};
     int getEnergiaMigalha(int x,int y);
+    bool verificaMigalha(int x,int y);
 };
 ostream & operator<<(ostream & saida, const Ninho & x);
 

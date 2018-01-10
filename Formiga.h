@@ -19,12 +19,12 @@ class Formiga {
         int y;
         int energia_inicial;
         int energia;
-        const Ninho * ninho;
+         Ninho * ninho;
         int raio_visao;
         int raio_movimento;
         static int sequencia;
 public:
-    Formiga(int posx,int posy,const Ninho * n,int e=0,int rv=0,int rm=0,char c='F')
+    Formiga(int posx,int posy, Ninho * n,int e=0,int rv=0,int rm=0,char c='F')
     :ninho(n),x(posx),y(posy),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c){
         id=sequencia;
         sequencia++;}
@@ -46,12 +46,12 @@ public:
     
     void Settipo(const char  c);
         void SetXY(int x,int y);
-        void SetEnergia(int e);
+        void SetEnergia(int e){energia+=e;}
         void removeEnergia(int mv);
         void setNinho(Ninho * n){ninho=n;}
-        
+        virtual void regraComeMigalha()=0;
         int regraPasseia();
-    
+        Ninho * getNinho(){return ninho;}
     virtual ~Formiga();
     virtual Formiga * duplica()const=0;
 

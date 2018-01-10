@@ -14,7 +14,7 @@
 #include "Exploradora.h"
 
 
-Exploradora::Exploradora(int posxx,int posyy,const Ninho *nn):Formiga(posxx,posyy,nn,200,10,8,'E'){
+Exploradora::Exploradora(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,200,10,8,'E'){
     
 };
 Exploradora::Exploradora(int posxx,int posyy):Formiga(posxx,posyy,200,10,8,'E'){
@@ -25,5 +25,13 @@ Exploradora::~Exploradora() {
 }
 Formiga * Exploradora::duplica() const{
 return new Exploradora(*this);    
+}
+void Exploradora::regraComeMigalha(){
+    Ninho *n;
+    int e;
+    n=getNinho();
+    
+    e=n->getEnergiaMigalha(getX(),getY());
+    SetEnergia(e);
 }
 

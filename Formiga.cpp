@@ -36,15 +36,16 @@ int Formiga :: regraPasseia(){
      auxx=rand()% (raio_movimento*2+1) - raio_movimento;
      auxy=rand()%(raio_movimento*2+1) -raio_movimento;
      mv=abs(x-auxx)+abs(y-auxy);
-
+     
     }
    
-    while(x+auxx<1 ||y+auxy<1 ||x+auxx>a ||y+auxy>a);
-    
-    
-     
+    while(x+auxx<1 ||y+auxy<1 ||x+auxx>a ||y+auxy>a);    
     x+=auxx;
     y+=auxy;
+    if(ninho->verificaMigalha(x,y)==true)
+        regraComeMigalha();
+    
+    
     return mv;
 }
 
