@@ -12,7 +12,8 @@
  */
 
 #include "Exploradora.h"
-
+#include <iostream>
+using namespace std;
 
 Exploradora::Exploradora(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,200,10,8,'E'){
     
@@ -27,11 +28,15 @@ Formiga * Exploradora::duplica() const{
 return new Exploradora(*this);    
 }
 void Exploradora::regraComeMigalha(){
+    
     Ninho *n;
     int e;
+    
     n=getNinho();
     
     e=n->getEnergiaMigalha(getX(),getY());
+   
     SetEnergia(e);
+
 }
 

@@ -18,33 +18,34 @@ int main() {
     //a regra passeia nao funciona para as formigas criados pelo
     //pelo ninho, pois elas nao tem um ponteiro para o ninho
     //lista posicao ??????????
+    //migalhas nao desaparecem ??? fuck->ver verifica migalhas==not fucked, i mean, still fucked...
     Comandos consola;
 
-    int l = 10;
+    int l = 20;
     int me = 50;
     int pm = 100;
-   
     Mundo m(l,pm,me);
-//    
+//    Exploradora *c=0;
     Ninho n(5,5,10,&m);
 ////    Ninho n1(1,1,2,&m);
     Exploradora a(2,2,&n);
     Exploradora b(4,4,&n);
     Exploradora c(6,6);
+//   c= new Exploradora (6,6);
     n.acrescentaFormiga(&a);
     n.acrescentaFormiga(&b);    
-//    m.acrescentaNinho(&n);
+    m.acrescentaNinho(&n);
 ////    m.acrescentaNinho(&n1);
     m.acrescentaFormiga(&c,1);
 //    m.preencheMatriz();
-    //n.removerFormiga(3);
+//    n.removerFormiga(3);
 //    m.preencheMatriz();
     //cout <<m.getAsString();
     //cout <<m.listaPosicao(1,1);
     
-//      a.regraPasseia();
-//    b.regraPasseia();
-//    c.regraPasseia();
+      a.regraPasseia();
+    b.regraPasseia();
+    c.regraPasseia();
 //    system("cls");
 //    
     m.preencheMatriz();

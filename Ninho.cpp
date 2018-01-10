@@ -6,6 +6,7 @@
 #include "Ninho.h"
 #include "Mundo.h"
 #include <sstream>
+#include <iostream>
 using namespace std;
 int Ninho::sequencia=1;
 Ninho::Ninho(int xx,int yy,int e, Mundo * m):mundo(m) {
@@ -79,7 +80,9 @@ void Ninho::retiraEnergia(){
 }
 int Ninho::getEnergiaMigalha(int x, int y){
     int aux;
+    
     aux=mundo->getEnergiaMigalha(x,y);
+   
     return aux;
     
 }

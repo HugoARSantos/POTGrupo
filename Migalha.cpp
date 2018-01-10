@@ -13,32 +13,37 @@
 
 #include "Migalha.h"
 #include <sstream>
-
+#include <iostream>
+using namespace std;
 
 Migalha::Migalha(const Migalha& orig) {
     *this=orig;
 }
 
 Migalha::~Migalha() {
+   
     delete this;
 }
 bool Migalha::verificaEnergia(){
-    if(energia_incial/energia<10)
-        delete this;
+    int x;
+    x=energia/energia_inicial;
+    
+    
+    if((energia/energia_inicial)< 0.1){
+        
         return true;
-    return false;
-}
-bool Migalha::removeEnergia(int x){
-    energia-=(1+x);
-    if(this->verificaEnergia()==true)
-    {
-        return true;
+       
     }
     return false;
 }
+
 
 string Migalha::getAsString(){
     ostringstream oss;
     oss << "Migalha: PosX:" << posx << " PosY:" << posy << endl;
     return oss.str();
+}
+void Migalha::setEnergia(int x){
+    energia+=x;
+   
 }

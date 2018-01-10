@@ -29,17 +29,14 @@ Mundo::Mundo(int x,int pMigalhas,int e ){
     preencheMatriz();
     }
     
-int Mundo::calculaQuantasMigalhas(int x){
-    int aux=x*nEspacosVazios()/100;
-    return aux;
-}
+
 int Mundo::nEspacosVazios(){
     int cont=0;
-    for(int i=0;i<dim;++i)
+    for(int i=0;i<dim;++i){
         for(int j=0;j<dim;++j){
             if(tab[i][j]== '-')
                 cont++;
-                     }
+        }}
     return cont;
 }
 Mundo::Mundo(const Mundo& orig) {
@@ -121,7 +118,7 @@ void Mundo::preencheMatriz(){
     int auxx;
     int auxy;
     int auxF;
-     for(int i=0;i<dim;++i)
+     for(int i=0;i<dim;++i){
         for(int j=0;j<dim;++j){
             tab[i][j]='-';
         }
@@ -131,9 +128,10 @@ void Mundo::preencheMatriz(){
            auxy = migalhas[i]->getPosY();
            tab[auxx-1][auxy-1]='m';
     }
-    
+       
     for(int i =0;i<ninhos.size();i++){
          auxF=ninhos[i]->gettamanhoVetor();
+         
         for(int j=0;j<auxF;j++){
            
            auxx = ninhos[i]->retornaPosxy(j,0);
@@ -152,7 +150,7 @@ void Mundo::preencheMatriz(){
       
   
 }
-    
+}  
     //}}
 
 int Mundo::pesquisa(int idd) const{
@@ -185,14 +183,14 @@ string Mundo::getAsString() const{
       
     oss<<"\nElementos\n";
     for(int k=0;k<ninhos.size();k++){
-        oss<<ninhos[k]->getAsString();
+        oss<<ninhos[k]->getAsStringTwo();
     }
     
-        for(int k=0;k<migalhas.size();k++){
-        oss<<migalhas[k]->getAsString();
-     
-    }
-    oss << endl << migalhas.size() << endl;
+//        for(int k=0;k<migalhas.size();k++){
+//        oss<<migalhas[k]->getAsString();
+//     
+//    }
+    //oss << endl << migalhas.size() << endl;
     return oss.str();
 }
 
@@ -222,14 +220,21 @@ Mundo::~Mundo() {
     delete tab;
 }
 
+
 void Mundo::adicionaMigalhas(int ee,int xx){
    
-    //int aux=calculaQuantasMigalhas(xx);
+//    int aux=calculaQuantasMigalhas(xx);
     int aux = dim*dim*xx/100;
+//    cout <<aux<<endl;
+    
+//    cout<<dim<<"\n"<<aux;
     int auxx,auxy;
-    //cout << "yo";
+//    //cout << "yo";
+    //cout<<aux<<endl;
     for (int i=0;i<aux;i++){
+       
         do{
+            preencheMatriz();
             auxx=rand()%dim+1;
             auxy=rand()%dim+1;
         }while(VerificaPosicao(auxx,auxy)==-1);
@@ -238,31 +243,43 @@ void Mundo::adicionaMigalhas(int ee,int xx){
          m =new Migalha(ee,auxx,auxy);
          //cout << i*10;
         
-        
+         
         migalhas.push_back(m);
         //cout << "WHY HAVE YOU FORSAKEN ME";
     
     }
-//    prencheMatriz();   
+   preencheMatriz();   
 }
 int Mundo::getEnergiaMigalha(int x, int y){
     int aux;
+   // cout<<"yolo";
     for(int i=0;i<migalhas.size();i++){
+        
         if(migalhas[i]->getPosX()==x && migalhas[i]->getPosY()==y){
             aux=migalhas[i]->getEnergia();
-            migalhas[i]->removeEnergia(aux);
+            
+            migalhas[i]->setEnergia(-aux);
+//            cout<<i<<"yolo\n";
+             verificaMigalhas();
             return aux;
         }
     }
-    verificaMigalhas();
+   
 }
 void Mundo::verificaMigalhas(){
+    bool x;
     for(int i=0;i<migalhas.size();++i){
-    if(migalhas[i]->verificaEnergia()==true){
-        delete migalhas[i];
+        x=migalhas[i]->verificaEnergia();
+    if(x==true){
+//        cout<<"yolo";
+//        delete migalhas[i];
+////        cout<<"yolo";
         migalhas.erase(migalhas.begin()+i);
+          cout<<migalhas.size()<<"\n";//Para concluiur que quando se cria alguma coisa no mundo tem que se remover as migalhas.
     }
+    
     }
+    preencheMatriz();
 }
 
 string Mundo::guardaMundo(){

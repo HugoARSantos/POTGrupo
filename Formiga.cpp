@@ -43,6 +43,7 @@ int Formiga :: regraPasseia(){
     x+=auxx;
     y+=auxy;
     if(ninho->verificaMigalha(x,y)==true)
+//        cout <<"yolo";
         regraComeMigalha();
     
     

@@ -19,14 +19,14 @@
 using namespace std;
 
 class Migalha {
-    int energia_incial;
+    int energia_inicial;
     int energia;
     int posx;
     int posy;
 public:
     Migalha(int e,int x,int y){
         energia=e;
-        energia_incial=e;
+        energia_inicial=e;
         posx=x;
         posy=y;
         //cout << "Migalha construida" << endl;
@@ -34,11 +34,13 @@ public:
     Migalha(const Migalha& orig);
     void setPosx(int x);
     void setPosy(int y);
+    void setEnergia(int x);
     int getEnergia(){return energia;}
     int getPosX(){return posx;}
     int getPosY(){return posy;}
     bool verificaEnergia();
-    bool removeEnergia(int x);
+    
+    
     virtual ~Migalha();
     string getAsString();
 
