@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Assaltante.o \
 	${OBJECTDIR}/Comandos.o \
 	${OBJECTDIR}/Cuidadora.o \
 	${OBJECTDIR}/Exploradora.o \
@@ -43,6 +44,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Mundo.o \
 	${OBJECTDIR}/Ninho.o \
 	${OBJECTDIR}/Simulacao.o \
+	${OBJECTDIR}/Surpresa.o \
+	${OBJECTDIR}/Vigilante.o \
 	${OBJECTDIR}/main.o
 
 
@@ -69,6 +72,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pootgrupo ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Assaltante.o: Assaltante.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Assaltante.o Assaltante.cpp
 
 ${OBJECTDIR}/Comandos.o: Comandos.cpp
 	${MKDIR} -p ${OBJECTDIR}
@@ -109,6 +117,16 @@ ${OBJECTDIR}/Simulacao.o: Simulacao.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Simulacao.o Simulacao.cpp
+
+${OBJECTDIR}/Surpresa.o: Surpresa.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Surpresa.o Surpresa.cpp
+
+${OBJECTDIR}/Vigilante.o: Vigilante.cpp
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Vigilante.o Vigilante.cpp
 
 ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}

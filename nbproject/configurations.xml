@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Assaltante.h</itemPath>
       <itemPath>Comandos.h</itemPath>
       <itemPath>Cuidadora.h</itemPath>
       <itemPath>Exploradora.h</itemPath>
@@ -12,6 +13,8 @@
       <itemPath>Mundo.h</itemPath>
       <itemPath>Ninho.h</itemPath>
       <itemPath>Simulacao.h</itemPath>
+      <itemPath>Surpresa.h</itemPath>
+      <itemPath>Vigilante.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -20,6 +23,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>Assaltante.cpp</itemPath>
       <itemPath>Comandos.cpp</itemPath>
       <itemPath>Cuidadora.cpp</itemPath>
       <itemPath>Exploradora.cpp</itemPath>
@@ -28,6 +32,8 @@
       <itemPath>Mundo.cpp</itemPath>
       <itemPath>Ninho.cpp</itemPath>
       <itemPath>Simulacao.cpp</itemPath>
+      <itemPath>Surpresa.cpp</itemPath>
+      <itemPath>Vigilante.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -52,6 +58,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="Assaltante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Assaltante.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Comandos.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Comandos.h" ex="false" tool="3" flavor2="0">
@@ -83,6 +93,14 @@
       <item path="Simulacao.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Simulacao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Surpresa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Surpresa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vigilante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Vigilante.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -107,6 +125,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="Assaltante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Assaltante.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Comandos.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Comandos.h" ex="false" tool="3" flavor2="0">
@@ -138,6 +160,14 @@
       <item path="Simulacao.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Simulacao.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Surpresa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Surpresa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vigilante.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Vigilante.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
