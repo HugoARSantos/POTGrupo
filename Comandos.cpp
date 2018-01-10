@@ -163,16 +163,24 @@ void Comandos::defNumeroMigalhas(int i){   //defnm
 int Comandos::executa(string ficheiro){
         ifstream ifs;
         ifs.open(ficheiro+".txt");
-        ifs >> lim;
-        ifs >> nenergia;
-        ifs >> menergia;
-        ifs >> energianovaformiga;
-        ifs >> transferir;
-        ifs >> percentagem;
-        ifs >> nmigalhas;
+        if(ifs.is_open()){
+            ifs >> lim;
+            ifs >> nenergia;
+            ifs >> menergia;
+            ifs >> energianovaformiga;
+            ifs >> transferir;
+            ifs >> percentagem;
+            ifs >> nmigalhas;
 
-        ifs.close();
+            ifs.close();
+            }
+        else
+        {
+            cout << "O ficheiro nao existe" << endl;
+                    return 0;
+        }
     
+        
     if (lim>=10 && nenergia>0 && menergia > 0 && energianovaformiga>=0 && energianovaformiga<=100 && transferir > 0
        && percentagem >=0 && percentagem <=100 && nmigalhas > 0)
     {

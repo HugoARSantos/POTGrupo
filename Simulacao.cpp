@@ -155,7 +155,11 @@ int Simulacao::simula(){
 //    else if (op=="mata")
 //    else if (op=="inseticida")
 //    else if (op=="guarda")
-//    else if (op=="muda")
+    else if (op=="muda"){
+        iss >> nficheiro;
+        //mudaMundo(nficheiro);
+    }
+        
     
     else if (op=="apaga"){
         iss >> nficheiro;
@@ -341,9 +345,27 @@ void Simulacao::criaMigalha(int i, int j){
 //void guardaMundo(string nome){
 //    
 //};
-//void mudaMundo(string nome){
-//    
-//};
+void Simulacao::mudaMundo(string nome){
+//        ifstream ifs;
+//        ifs.open(nome+".txt");
+//        if(ifs.is_open()){
+//        ifs >> lim;
+//        ifs >> nenergia;
+//        ifs >> menergia;
+//        ifs >> energianovaformiga;
+//        ifs >> transferir;
+//        ifs >> percentagem;
+//        ifs >> nmigalhas;
+//        m = (lim,percentagem,menergia);
+//        ifs.close();
+//        }
+//        else 
+//        {
+//            cout << "O ficheiro nao existe" << endl;
+//                    //return 0;
+//        }
+    
+};
 
 int Simulacao::apagaMundo(string nome){
     if (remove((nome+".txt").c_str()) !=0){
