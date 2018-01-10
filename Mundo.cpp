@@ -220,6 +220,7 @@ int Mundo::getEnergiaMigalha(int x, int y){
             return aux;
         }
     }
+    verificaMigalhas();
 }
 void Mundo::verificaMigalhas(){
     for(int i=0;i<migalhas.size();++i){
