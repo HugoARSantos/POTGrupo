@@ -30,6 +30,7 @@ public:
     int getX(){return x;}
     int getDimMundo()const ;
     int getY(){return y;}
+    int getEnergiaInicial(){return energia_inicial;}
     int getId()const{return id;}
     int gettamanhoVetor()const{return formigas.size();}
     Ninho * getPonteiro(){return this;}
