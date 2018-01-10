@@ -53,7 +53,7 @@ public:
     int simula();
     void criaNinho(int i,int j);
     void criaFormigas(int i, string a, int j);
-    void criaFor(int i, int j, int k, int l);
+    void criaFor(int i, string a, int j, int k);
     void criaMigalha(int i, int j);
     void foca(int i, int j);
     void tempo(int i);

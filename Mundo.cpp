@@ -31,7 +31,6 @@ Mundo::Mundo(int x,int pMigalhas,int e ){
     
 int Mundo::calculaQuantasMigalhas(int x){
     int aux=x*nEspacosVazios()/100;
-    cout << "Espacos vazios:" << aux << endl;
     return aux;
 }
 int Mundo::nEspacosVazios(){
@@ -47,16 +46,50 @@ Mundo::Mundo(const Mundo& orig) {
 }
 string Mundo::MostraMundo(){
     ostringstream oss;
-    
+    //int ea, eb, ec;
+    //int auxF;
      for(int i=0;i<dim;i++){
-         oss<<"\n";
+        oss<<"\n";
         for (int j=0;j<dim;j++){
+/*       
+            ea=0, eb=0, ec=0;    
+    
+        for(int i=0;i<migalhas.size();i++){
+           if(a == migalhas[i]->getPosX() &&
+           b == migalhas[i]->getPosY())
+              oss << 'm';
+           else ea=1;
+        }
+    
+/*        for(int i =0;i<ninhos.size();i++){
+         auxF=ninhos[i]->gettamanhoVetor();
+            for(int j=0;j<auxF;j++){
+           
+           if(a = ninhos[i]->retornaPosxy(j,0) &&
+           b=ninhos[i]->retornaPosxy(j,1))
+           oss << 'E';
+           else
+               eb=1;
         
-            oss<< tab[i][j];}
+      }}
+    for( int i =0;i<ninhos.size();i++){
+        if(a==ninhos[i]->getX()&&     
+        b==ninhos[i]->getY())
+       
+            oss << 'N';
+        else ec=1;
+    }
+        
+        if (ea==0)
+                oss << "-";*/
+            oss<< tab[i][j];
+        }
      }
     oss << endl;
     return oss.str();
+        
 }
+
 bool Mundo::acrescentaFormiga(Formiga* f, int id){
     int aux=pesquisa(id);
     if(aux==-1)
@@ -71,7 +104,7 @@ bool Mundo::acrescentaFormiga(Formiga* f, int id){
           
 }
 char Mundo::listaPosicao(int x, int y) {
-    char i=tab[x][y];
+    char i=tab[x-1][y-1];
     return i;
     
 }
@@ -92,11 +125,13 @@ void Mundo::preencheMatriz(){
         for(int j=0;j<dim;++j){
             tab[i][j]='-';
         }
-      for(int i=0;i<migalhas.size();++i){
+    
+    for(int i=0;i<migalhas.size();i++){
            auxx = migalhas[i]->getPosX();
            auxy = migalhas[i]->getPosY();
            tab[auxx-1][auxy-1]='m';
     }
+    
     for(int i =0;i<ninhos.size();i++){
          auxF=ninhos[i]->gettamanhoVetor();
         for(int j=0;j<auxF;j++){
@@ -157,7 +192,7 @@ string Mundo::getAsString() const{
         oss<<migalhas[k]->getAsString();
      
     }
-    oss << endl;
+    oss << endl << migalhas.size() << endl;
     return oss.str();
 }
 
@@ -189,7 +224,8 @@ Mundo::~Mundo() {
 
 void Mundo::adicionaMigalhas(int ee,int xx){
    
-    int aux=calculaQuantasMigalhas(xx);
+    //int aux=calculaQuantasMigalhas(xx);
+    int aux = dim*dim*xx/100;
     int auxx,auxy;
     //cout << "yo";
     for (int i=0;i<aux;i++){
@@ -228,6 +264,22 @@ void Mundo::verificaMigalhas(){
     }
     }
 }
+
+string Mundo::guardaMundo(){
+    ostringstream oss;
+    for(int k=0;k<ninhos.size();k++){
+        oss << "Ninho " <<ninhos[k]->getId() << " " <<ninhos[k]->getX() 
+                << " " <<ninhos[k]->getY() << " " <<ninhos[k]->getEnergia() 
+                << " " <<ninhos[k]->getEnergiaInicial() << endl;
+    }
+    
+        for(int k=0;k<migalhas.size();k++){
+        oss<<"Migalha " << migalhas[k]->getPosX() << " " << migalhas[k]->getPosY() << " " << migalhas[k]->getEnergia() << endl ;
+     
+    }
+    return oss.str();
+}
+
 ostream & operator<<(ostream & saida, const Mundo & x) {
     saida << x.getAsString();
     return saida;

@@ -44,6 +44,7 @@ public:
     string getAsString()const;
     char listaPosicao(int x,int y);
     int getEnergiaMigalha(int x,int y);
+    string guardaMundo();
 };
 ostream & operator<<(ostream & saida, const Mundo & x);
 

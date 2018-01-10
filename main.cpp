@@ -19,38 +19,41 @@ int main() {
     //pelo ninho, pois elas nao tem um ponteiro para o ninho
     //lista posicao ??????????
     Comandos consola;
-    /*int i;
+
     int l = 10;
     int me = 50;
-    int pm = 50;
+    int pm = 100;
    
     Mundo m(l,pm,me);
-    
+//    
     Ninho n(5,5,10,&m);
-    Ninho n1(1,1,2,&m);
+////    Ninho n1(1,1,2,&m);
     Exploradora a(2,2,&n);
     Exploradora b(4,4,&n);
     Exploradora c(6,6);
     n.acrescentaFormiga(&a);
-    n.acrescentaFormiga(&b);
-    
-    m.acrescentaNinho(&n);
-    m.acrescentaNinho(&n1);
+    n.acrescentaFormiga(&b);    
+//    m.acrescentaNinho(&n);
+////    m.acrescentaNinho(&n1);
     m.acrescentaFormiga(&c,1);
-    //m.preencheMatriz();
+//    m.preencheMatriz();
     //n.removerFormiga(3);
 //    m.preencheMatriz();
     //cout <<m.getAsString();
     //cout <<m.listaPosicao(1,1);
-    a.regraPasseia();
-    b.regraPasseia();
-    c.regraPasseia();
-    system("cls");
+    
+//      a.regraPasseia();
+//    b.regraPasseia();
+//    c.regraPasseia();
+//    system("cls");
+//    
     m.preencheMatriz();
-    //cout <<n.getAsString();
-    cout<<m;
-    */
+    cout << m.MostraMundo();
+    cout<< m;
+    //cout << m.ListaNinho(1);
+//    
     bool run = true;
+    
     do{
     if (consola.configuracao() == 1)
     {

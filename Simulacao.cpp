@@ -61,9 +61,9 @@ int Simulacao::simula(){
     k=-1;
     j=-1;
     l=-1;
-    a = "";
-    b = "";
-    c = "";
+    a="";
+    b="";
+    c="";
     nficheiro="";
     istringstream iss(op);
     iss >> op;        
@@ -118,9 +118,11 @@ int Simulacao::simula(){
         criaFormigas(i,a,j);
     }
         else if (op == "cria1"){
+        iss >> i;
         iss >> a;
         iss >> j;
-        criaFormigas(1,a,j);
+        iss >> k;
+        criaFor(1,a,j,k);
     }
     else if (op == "tempo"){
         iss >> i;
@@ -154,7 +156,10 @@ int Simulacao::simula(){
 //    else if (op=="energformiga")
 //    else if (op=="mata")
 //    else if (op=="inseticida")
-//    else if (op=="guarda")
+    else if (op=="guarda"){
+        iss >> nficheiro;
+        guardaMundo(nficheiro);
+    }
     else if (op=="muda"){
         iss >> nficheiro;
         //mudaMundo(nficheiro);
@@ -204,6 +209,10 @@ void Simulacao::criaFormigas(int i, string a, int j){
     if (i>=1 && a== "E" && j <= nninhos && j>0)
         cout << i << " formigas do tipo " << a << " foram acrescentadas ao ninho " << j << endl;
 }
+
+void Simulacao::criaFor(int i, string a, int j, int k){
+    
+};
 
 void Simulacao::tempo(int i){
     if (i=0)
@@ -342,9 +351,25 @@ void Simulacao::criaMigalha(int i, int j){
 //void listaPosicao(int i,int j){
 //    
 //};
-//void guardaMundo(string nome){
-//    
-//};
+void Simulacao::guardaMundo(string nome){
+    ofstream ofs;
+    ofs.open(nome+".txt");
+    ofs << lim;
+    ofs <<"\n";
+    ofs << nenergia;
+    ofs <<"\n";
+    ofs << menergia;
+    ofs <<"\n";
+    ofs << energianovaformiga;
+    ofs <<"\n";
+    ofs << transferir;
+    ofs <<"\n";
+    ofs << percentagem;
+    ofs <<"\n";
+    ofs << nmigalhas;
+    ofs << m.guardaMundo();
+    ofs.close();
+};
 void Simulacao::mudaMundo(string nome){
 //        ifstream ifs;
 //        ifs.open(nome+".txt");
@@ -373,7 +398,7 @@ int Simulacao::apagaMundo(string nome){
             getch();
     }
         else {
-            cout << nome << " foi apagado com sucesso" << endl;;
+            cout << nome << " foi apagado com sucesso" << endl;
             getch();
     }
 
@@ -381,3 +406,4 @@ int Simulacao::apagaMundo(string nome){
         return 1;
     return 0;
 };
+
