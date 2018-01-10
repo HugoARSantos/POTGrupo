@@ -17,6 +17,7 @@
 #include "Mundo.h"
 #include "Ninho.h"
 #include "Formiga.h"
+#include "Exploradora.h"
 #include <cstdlib>
 #include <iostream>
 #include <string>

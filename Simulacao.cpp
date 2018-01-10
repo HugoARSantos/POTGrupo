@@ -50,8 +50,16 @@ int Simulacao::simula(){
     ofs << nmigalhas;
 
     ofs.close();
-
+    
+//    Ninho n(5,5,10,&m);
+//    Exploradora fa(2,2,&n);
+//    Exploradora fb(4,4,&n);
+//    n.acrescentaFormiga(&fa);
+//    n.acrescentaFormiga(&fb);    
+//    m.acrescentaNinho(&n);
     do{
+//    fa.regraPasseia();
+//    fb.regraPasseia();
     m.preencheMatriz();
     system("cls");
     cout <<"\b" << m.MostraMundo();
@@ -215,11 +223,19 @@ void Simulacao::criaFor(int i, string a, int j, int k){
 };
 
 void Simulacao::tempo(int i){
-    if (i=0)
+    if (i==0){
         cout << "Nao podes ficar parado no tempo, segue em frente" << endl;
+    }
     else if (i<0)
     {
+        int novas = rand()% nmigalhas;
         
+        for (int aux=0;aux<novas;aux++){
+            int j=rand()%lim+1;
+            int k=rand()%lim+1;
+            m.acrescentaMigalha(menergia,j,k);
+        }
+
     }
     else if (i>1)
     {
@@ -335,7 +351,7 @@ void Simulacao::criaMigalha(int i, int j){
         cout << "Coluna invalida" << endl;
     if (i>0 && i <= lim && j>0 && j <= lim)
     {
-        //m.acrescentaMigalha(i,j);
+        m.acrescentaMigalha(menergia,i,j);
     }
 }
 //void mataFormiga(int i, int j){

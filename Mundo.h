@@ -34,6 +34,7 @@ public:
     Mundo(const Mundo& orig);
     void preencheMatriz();
     void adicionaMigalhas(int e,int xx);
+    void acrescentaMigalha(int e,int x, int y);
     void verificaMigalhas();
     bool acrescentaNinho(Ninho * ninho);
     bool acrescentaFormiga(Formiga *f,int id);

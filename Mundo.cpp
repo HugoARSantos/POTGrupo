@@ -43,42 +43,9 @@ Mundo::Mundo(const Mundo& orig) {
 }
 string Mundo::MostraMundo(){
     ostringstream oss;
-    //int ea, eb, ec;
-    //int auxF;
      for(int i=0;i<dim;i++){
         oss<<"\n";
         for (int j=0;j<dim;j++){
-/*       
-            ea=0, eb=0, ec=0;    
-    
-        for(int i=0;i<migalhas.size();i++){
-           if(a == migalhas[i]->getPosX() &&
-           b == migalhas[i]->getPosY())
-              oss << 'm';
-           else ea=1;
-        }
-    
-/*        for(int i =0;i<ninhos.size();i++){
-         auxF=ninhos[i]->gettamanhoVetor();
-            for(int j=0;j<auxF;j++){
-           
-           if(a = ninhos[i]->retornaPosxy(j,0) &&
-           b=ninhos[i]->retornaPosxy(j,1))
-           oss << 'E';
-           else
-               eb=1;
-        
-      }}
-    for( int i =0;i<ninhos.size();i++){
-        if(a==ninhos[i]->getX()&&     
-        b==ninhos[i]->getY())
-       
-            oss << 'N';
-        else ec=1;
-    }
-        
-        if (ea==0)
-                oss << "-";*/
             oss<< tab[i][j];
         }
      }
@@ -186,11 +153,11 @@ string Mundo::getAsString() const{
         oss<<ninhos[k]->getAsStringTwo();
     }
     
-//        for(int k=0;k<migalhas.size();k++){
-//        oss<<migalhas[k]->getAsString();
-//     
-//    }
-    //oss << endl << migalhas.size() << endl;
+        for(int k=0;k<migalhas.size();k++){
+        oss<<migalhas[k]->getAsString();
+     
+    }
+    oss << endl << migalhas.size() << endl;
     return oss.str();
 }
 
@@ -239,13 +206,8 @@ void Mundo::adicionaMigalhas(int ee,int xx){
             auxy=rand()%dim+1;
         }while(VerificaPosicao(auxx,auxy)==-1);
          Migalha *m= nullptr;
-         //cout << i;
-         m =new Migalha(ee,auxx,auxy);
-         //cout << i*10;
-        
-         
+         m =new Migalha(ee,auxx,auxy);        
         migalhas.push_back(m);
-        //cout << "WHY HAVE YOU FORSAKEN ME";
     
     }
    preencheMatriz();   
@@ -302,3 +264,8 @@ ostream & operator<<(ostream & saida, const Mundo & x) {
     return saida;
 }
 
+void Mundo::acrescentaMigalha(int e,int x,int y){
+        Migalha *m= nullptr;
+        m =new Migalha(e,x,y);        
+        migalhas.push_back(m);
+}
