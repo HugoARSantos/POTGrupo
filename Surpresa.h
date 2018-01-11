@@ -24,7 +24,7 @@ public:
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Surpresa();
-
+    bool verificaRegras();
 
 };
 

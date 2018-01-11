@@ -25,3 +25,8 @@ Surpresa::~Surpresa() {
 Formiga * Surpresa::duplica() const{
 return new Surpresa(*this);    
 }
+
+bool Surpresa::verificaRegras(){
+    regraPasseia();
+    return true;
+}

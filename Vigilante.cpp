@@ -49,8 +49,8 @@ bool Vigilante::regraProcuraMigalha(){
 bool Vigilante::verificaRegras() {
     if(regraProcuraMigalha()==true)
         return true;
-    
-    return false;
+    regraPasseia();
+    return true;
 }
 
 Vigilante::~Vigilante() {

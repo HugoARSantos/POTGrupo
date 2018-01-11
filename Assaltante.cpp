@@ -50,8 +50,8 @@ bool Assaltante::verificaRegras() {
    
     if(regraProcuraMigalha()==true)
         return true;
-    
-    return false;
+    regraPasseia();
+    return true;
 }
 
 Assaltante::~Assaltante() {

@@ -114,7 +114,7 @@ ostream & operator<<(ostream & saida, const Ninho & x) {
 
 void Ninho::mexeFormiga(){
     for (int i = 0; i < formigas.size();i++){
-        formigas[i]->regraPasseia();
+        formigas[i]->verificaRegras();
     }
 }
 

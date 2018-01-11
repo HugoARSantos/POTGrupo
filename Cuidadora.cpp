@@ -48,13 +48,13 @@ bool Cuidadora::regraProcuraMigalha(){
 }
 
 bool Cuidadora::verificaRegras() {
-      if(regrafoge()==true){
+    if(regrafoge()==true){
           return true;
       }
     if(regraProcuraMigalha()==true)
         return true;
-    
-    return false;
+    regraPasseia();
+    return true;
 }
 bool Cuidadora::regrafoge(){
     Ninho * n=0;
