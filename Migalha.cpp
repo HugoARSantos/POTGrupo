@@ -40,7 +40,7 @@ bool Migalha::verificaEnergia(){
 
 string Migalha::getAsString(){
     ostringstream oss;
-    oss << "Migalha: PosX:" << posx << " PosY:" << posy << endl;
+    oss << "Migalha: PosX:" << posx << " PosY:" << posy << endl << " Energia:" << energia;
     return oss.str();
 }
 void Migalha::setEnergia(int x){

@@ -156,7 +156,14 @@ int Simulacao::simula(){
     }
 //    else if (op=="energformiga")
 //    else if (op=="mata")
-//    else if (op=="inseticida")
+    else if (op=="inseticida"){
+        iss >> i;
+        if(m.inseticida(i) == false)
+        {
+            cout << "O ninho nao existe";
+            getch();
+        }
+    }
     else if (op=="guarda"){
         iss >> nficheiro;
         guardaMundo(nficheiro);
