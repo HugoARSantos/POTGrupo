@@ -35,7 +35,29 @@ Mundo::Mundo(int x,int pMigalhas,int e ){
     }
     
 
+bool Mundo::verificaFormigaDiferente(int x, int y, int idd){
+    int aux,auy,auxF;
+    for(int i =0;i<ninhos.size();i++){
+        if(ninhos[i]->getId()==idd){
+         auxF=ninhos[i]->gettamanhoVetor();
+         
+        for(int j=0;j<auxF;j++){
+           
+           aux = ninhos[i]->retornaPosxy(j,0);
+           auy = ninhos[i]->retornaPosxy(j,1);
+           if(aux==x && auy ==y )
+               return true;
+           
+           
+           
 
+        }
+            
+        }
+            
+    }
+    return false;
+}
 int Mundo::nEspacosVazios(){
     int cont=0;
     for(int i=0;i<dim;++i){
@@ -53,7 +75,8 @@ string Mundo::MostraMundo(){
      for(int i=0;i<dim;i++){
         oss<<"\n";
         for (int j=0;j<dim;j++){
-            oss<< tab[i][j];
+            oss<< tab[i][j]<<" ";
+            
         }
      }
     oss << endl;

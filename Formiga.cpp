@@ -22,7 +22,19 @@ string Formiga ::  getAsString()const{
     oss << "A Formiga "<<id<<" do tipo "<<tipo<<"\nEsta na posicao("<<x<<"/"<<y<<")e tem "<<energia<< " de energia"<<endl;
     return oss.str();
 }
-
+int Formiga::move(int xx, int yy){
+    int dis=1000,aux,auy;
+    for (int i=x;i<x+raio_movimento;i++)
+        for(int j=y;j<y+raio_movimento;i++){
+            if(dis>abs(((i-xx)*(i-xx))+((j-yy)*(j-yy))))
+                dis=abs(((i-xx)*(i-xx))+((j-yy)*(j-yy)));
+            aux=i;
+            auy=j;
+            
+        }
+    x=aux;
+    x=auy;
+}
 Formiga :: Formiga(const Formiga & orig){
 }
 void Formiga :: removeEnergia(int mv){

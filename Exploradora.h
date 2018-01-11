@@ -20,6 +20,7 @@ class Exploradora: public Formiga {
 public:
     Exploradora(int posxx,int posyy, Ninho * nn);
     Exploradora(int posxx,int posyy);
+    bool regraProcuraMigalha(){return false;} 
 //    void regraComeMigalha();
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);

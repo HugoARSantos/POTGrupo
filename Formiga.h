@@ -36,13 +36,15 @@ public:
         sequencia++;}
         
     Formiga(const Formiga & orig);
-   
+    int move(int xx,int yy);
     int getX(){return x;}
     int getY(){return y;}
     char geTipo(){return tipo;}
     int getEnergiaInicial(){return energia_inicial;}
     int getEnergia(){return energia;}
     int getId()const{return id;};
+    int getRVisao(){return raio_visao;}
+    virtual bool verificaRegras(){}
     virtual string getAsString()const;
     
     
@@ -53,7 +55,10 @@ public:
         void setNinho(Ninho * n){ninho=n;}
          void regraComeMigalha();
         int regraPasseia();
+        virtual bool regraProcuraMigalha(){};
+        virtual bool regrafoge(){};
         Ninho * getNinho(){return ninho;}
+       
     virtual ~Formiga();
     virtual Formiga * duplica()const=0;
 

@@ -20,7 +20,9 @@ class Cuidadora:public Formiga {
 public:
     Cuidadora(int posxx,int posyy, Ninho * nn);
     Cuidadora(int posxx,int posyy);
-    //void regraComeMigalha();
+    bool regraProcuraMigalha();
+    bool verificaRegras();
+    bool regrafoge();
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Cuidadora();

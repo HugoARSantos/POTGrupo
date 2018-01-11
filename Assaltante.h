@@ -18,9 +18,12 @@ class Assaltante :public Formiga{
    private:
         
 public:
-    Assaltante(int posxx,int posyy, Ninho * nn);
+   Assaltante(int posxx,int posyy, Ninho * nn);
    Assaltante(int posxx,int posyy);
     //void regraComeMigalha();
+       //void regraComeMigalha();
+   bool regraProcuraMigalha();
+   bool verificaRegras();
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Assaltante();

@@ -129,3 +129,9 @@ string Ninho::guardaFormiga(){
     }
     return oss.str();
 }
+bool Ninho::verificaFormiga(int x,int y){
+    
+    if(mundo->verificaFormigaDiferente(x,y,id)==true)
+        return true;
+    return false;
+}

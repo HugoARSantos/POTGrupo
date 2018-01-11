@@ -20,7 +20,8 @@ class Vigilante :public Formiga{
 public:
     Vigilante(int posxx,int posyy, Ninho * nn);
     Vigilante(int posxx,int posyy);
-    
+    bool regraProcuraMigalha();
+    bool verificaRegras();
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Vigilante();
