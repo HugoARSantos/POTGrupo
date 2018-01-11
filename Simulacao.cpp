@@ -155,7 +155,16 @@ int Simulacao::simula(){
         criaMigalha(i,j);
     }
 //    else if (op=="energformiga")
-//    else if (op=="mata")
+    else if (op=="mata")
+    {
+        iss >> i;
+        iss >> j;
+        if (m.eliminaFormiga(i,j) == false)        {
+            cout << "Nao existe nenhuma formiga nesta posicao ou nao existe uma posicao valida";
+            getch();
+        }
+    }
+    
     else if (op=="inseticida"){
         iss >> i;
         if(m.inseticida(i) == false)
