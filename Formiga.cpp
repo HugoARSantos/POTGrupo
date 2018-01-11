@@ -53,3 +53,13 @@ int Formiga :: regraPasseia(){
 void Formiga::Settipo(char c){
     tipo=c;
 }
+
+void Formiga::regraComeMigalha(){
+    
+    int e;
+    
+    e=ninho.getEnergiaMigalha(x,y,100);
+   
+    SetEnergia(e);
+
+}

@@ -227,7 +227,7 @@ int Mundo::getEnergiaMigalha(int x, int y,int pper){
             migalhas[i]->setEnergia(-auxx);
 //            cout<<i<<"yolo\n";
              verificaMigalhas();
-            return aux;
+            return auxx;
         }
     }
    

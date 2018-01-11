@@ -50,7 +50,7 @@ public:
         void SetEnergia(int e){energia+=e;}
         void removeEnergia(int mv);
         void setNinho(Ninho * n){ninho=n;}
-        virtual void regraComeMigalha()=0;
+         void regraComeMigalha();
         int regraPasseia();
         Ninho * getNinho(){return ninho;}
     virtual ~Formiga();

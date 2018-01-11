@@ -27,16 +27,5 @@ Exploradora::~Exploradora() {
 Formiga * Exploradora::duplica() const{
 return new Exploradora(*this);    
 }
-void Exploradora::regraComeMigalha(){
-    
-    Ninho *n;
-    int e;
-    
-    n=getNinho();
-    
-    e=n->getEnergiaMigalha(getX(),getY(),100);
-   
-    SetEnergia(e);
 
-}
 
