@@ -13,10 +13,10 @@
 
 #include "Cuidadora.h"
 
-Cuidadora::Cuidadora(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,100,5,3,'C'){
+Cuidadora::Cuidadora(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,100,5,3,'C',50){
     
 };
-Cuidadora::Cuidadora(int posxx,int posyy):Formiga(posxx,posyy,100,5,3,'C'){
+Cuidadora::Cuidadora(int posxx,int posyy):Formiga(posxx,posyy,100,5,3,'C',50){
     
 };
 
@@ -25,16 +25,5 @@ Cuidadora::~Cuidadora() {
 Formiga * Cuidadora::duplica() const{
 return new Cuidadora(*this);    
 }
-void Cuidadora::regraComeMigalha(){
-    
-//    Ninho *n;
-//    int e;
-//    
-//    n=getNinho();
-//    
-//    e=n->getEnergiaMigalha(getX(),getY());
-//   
-//    SetEnergia(e);
 
-}
 

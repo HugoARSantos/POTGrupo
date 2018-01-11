@@ -13,10 +13,10 @@
 
 #include "Surpresa.h"
 
-Surpresa::Surpresa(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,80,8,4,'S'){
+Surpresa::Surpresa(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,80,8,4,'S',100){
     
 };
-Surpresa::Surpresa(int posxx,int posyy):Formiga(posxx,posyy,80,8,4,'S'){
+Surpresa::Surpresa(int posxx,int posyy):Formiga(posxx,posyy,80,8,4,'S',100){
     
 };
 
@@ -24,16 +24,4 @@ Surpresa::~Surpresa() {
 }
 Formiga * Surpresa::duplica() const{
 return new Surpresa(*this);    
-}
-void Surpresa::regraComeMigalha(){
-//    
-//    Ninho *n;
-//    int e;
-//    
-//    n=getNinho();
-//    
-//    e=n->getEnergiaMigalha(getX(),getY());
-//   
-//    SetEnergia(e);
-
 }

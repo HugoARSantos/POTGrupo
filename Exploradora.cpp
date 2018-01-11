@@ -15,10 +15,10 @@
 #include <iostream>
 using namespace std;
 
-Exploradora::Exploradora(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,200,10,8,'E'){
+Exploradora::Exploradora(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,200,10,8,'E',100){
     
 };
-Exploradora::Exploradora(int posxx,int posyy):Formiga(posxx,posyy,200,10,8,'E'){
+Exploradora::Exploradora(int posxx,int posyy):Formiga(posxx,posyy,200,10,8,'E',100){
     
 };
 

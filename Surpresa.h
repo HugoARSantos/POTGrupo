@@ -20,7 +20,7 @@ class Surpresa :public Formiga{
 public:
     Surpresa(int posxx,int posyy, Ninho * nn);
     Surpresa(int posxx,int posyy);
-    void regraComeMigalha();
+    
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Surpresa();

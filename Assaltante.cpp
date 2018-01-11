@@ -13,10 +13,10 @@
 
 #include "Assaltante.h"
 
-Assaltante::Assaltante(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,80,8,4,'A'){
+Assaltante::Assaltante(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,80,8,4,'A',25){
     
 };
-Assaltante::Assaltante(int posxx,int posyy):Formiga(posxx,posyy,80,8,4,'A'){
+Assaltante::Assaltante(int posxx,int posyy):Formiga(posxx,posyy,80,8,4,'A',25){
     
 };
 
@@ -24,16 +24,4 @@ Assaltante::~Assaltante() {
 }
 Formiga * Assaltante::duplica() const{
 return new Assaltante(*this);    
-}
-void Assaltante::regraComeMigalha(){
-//    
-//    Ninho *n;
-//    int e;
-//    
-//    n=getNinho();
-//    
-//    e=n->getEnergiaMigalha(getX(),getY());
-//   
-//    SetEnergia(e);
-
 }

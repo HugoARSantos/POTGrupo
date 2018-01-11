@@ -13,10 +13,10 @@
 
 #include "Vigilante.h"
 
-Vigilante::Vigilante(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,150,7,5,'V'){
+Vigilante::Vigilante(int posxx,int posyy, Ninho *nn):Formiga(posxx,posyy,nn,150,7,5,'V',75){
     
 };
-Vigilante::Vigilante(int posxx,int posyy):Formiga(posxx,posyy,150,7,5,'V'){
+Vigilante::Vigilante(int posxx,int posyy):Formiga(posxx,posyy,150,7,5,'V',75){
     
 };
 
@@ -25,17 +25,3 @@ Vigilante::~Vigilante() {
 Formiga * Vigilante::duplica() const{
 return new Vigilante(*this);    
 }
-void Vigilante::regraComeMigalha(){
-//    
-//    Ninho *n;
-//    int e;
-//    
-//    n=getNinho();
-//    
-//    e=n->getEnergiaMigalha(getX(),getY());
-//   
-//    SetEnergia(e);
-
-}
-
-

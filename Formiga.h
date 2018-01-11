@@ -19,18 +19,19 @@ class Formiga {
         int y;
         int energia_inicial;
         int energia;
+        int pEnergia;
          Ninho * ninho;
         int raio_visao;
         int raio_movimento;
         static int sequencia;
 public:
-    Formiga(int posx,int posy, Ninho * n,int e=0,int rv=0,int rm=0,char c='F')
-    :ninho(n),x(posx),y(posy),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c){
+    Formiga(int posx,int posy, Ninho * n,int e=0,int rv=0,int rm=0,char c='F',int pe=0)
+    :ninho(n),x(posx),y(posy),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c),pEnergia(pe){
         id=sequencia;
         sequencia++;}
         
-    Formiga(int posx,int posy,int e=0,int rv=0,int rm=0,char c='F')
-    :x(posx),y(posy),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c){
+    Formiga(int posx,int posy,int e=0,int rv=0,int rm=0,char c='F',int pe=0)
+    :x(posx),y(posy),energia_inicial(e),energia(e),raio_visao(rv),raio_movimento(rm),tipo(c),pEnergia(pe){
         id=sequencia;
         sequencia++;}
         

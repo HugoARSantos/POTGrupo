@@ -20,7 +20,7 @@ class Assaltante :public Formiga{
 public:
     Assaltante(int posxx,int posyy, Ninho * nn);
    Assaltante(int posxx,int posyy);
-    void regraComeMigalha();
+    //void regraComeMigalha();
     Formiga * duplica()const;
     //Exploradora(const Exploradora& orig);
     virtual ~Assaltante();
