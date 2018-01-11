@@ -23,10 +23,12 @@ class Ninho {
           Mundo * mundo;
         static int sequencia;
         int pesquisa(int idd)const;
+        
 public:
     Ninho(int xx, int yy,int e, Mundo *m);
     bool acrescentaFormiga(Formiga * formiga);
     bool removerFormiga(int idd);
+    int pesquisa(int x,int y);
     int getX(){return x;}
     int getDimMundo()const ;
     int getY(){return y;}

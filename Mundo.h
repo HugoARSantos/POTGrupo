@@ -22,6 +22,7 @@ class Mundo {
     vector<Migalha *> migalhas;
     char **tab;
     int pesquisa(int idd)const;
+    
     int calculaQuantasMigalhas(int x);
     int nEspacosVazios();
 public:
@@ -35,6 +36,7 @@ public:
     void acrescentaForm(int idn, char tipo, int l,int c);
     Mundo(const Mundo& orig);
     void preencheMatriz();
+    bool eliminaFormiga(int x,int y);
     void adicionaMigalhas(int e,int xx);
     void acrescentaMigalha(int e,int x, int y);
     void verificaMigalhas();

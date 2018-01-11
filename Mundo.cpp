@@ -35,6 +35,7 @@ Mundo::Mundo(int x,int pMigalhas,int e ){
     }
     
 
+
 int Mundo::nEspacosVazios(){
     int cont=0;
     for(int i=0;i<dim;++i){
@@ -44,6 +45,7 @@ int Mundo::nEspacosVazios(){
         }}
     return cont;
 }
+
 Mundo::Mundo(const Mundo& orig) {
 }
 string Mundo::MostraMundo(){
@@ -395,4 +397,22 @@ bool Mundo::inseticida(int id){
     
     ninhos.erase(ninhos.begin()+aux);
     return true;
+}
+bool Mundo::eliminaFormiga(int x, int y){
+    int auxF,aux;
+     for(int i =0;i<ninhos.size();i++){
+         auxF=ninhos[i]->gettamanhoVetor();
+         
+        for(int j=0;j<auxF;j++){
+            aux=ninhos[i]->pesquisa(x,y);
+            if(aux!=-1){
+                ninhos[i]->removerFormiga(aux);
+                return true;
+            }
+           
+
+        
+      }}
+        
+    return false;
 }

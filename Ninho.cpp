@@ -17,6 +17,13 @@ Ninho::Ninho(int xx,int yy,int e, Mundo * m):mundo(m) {
     id=sequencia;
     sequencia++;
 }
+int Ninho::pesquisa(int x, int y){
+    for(int i=0;i<formigas.size();i++){
+        if(formigas[i]->getX()==x && formigas[i]->getY()==y)
+            return formigas[i]->getId();
+    }
+    return -1;
+}
 int Ninho::getDimMundo() const{
     return mundo->getDim();
 }
@@ -40,7 +47,7 @@ bool Ninho::removerFormiga(int idd) {
     if (aux == -1)
         return false;
     // liberta o objecto apontado por formigas[i]
-    delete formigas[aux];
+    //delete formigas[aux];
     //retira o ponteiro do vetor
     formigas.erase(formigas.begin() + aux);
     return true;
