@@ -48,8 +48,10 @@ public:
     void setEnergia(int j){energia+=j;};
     int getEnergiaMigalha(int x,int y,int per=0);
     bool verificaFormiga(int x,int y);
+    int verificaenergia(int ener);
     bool verificaMigalha(int x,int y);
     void mexeFormiga();
+    int criaFormiga(int e);
     string guardaFormiga();
 };
 ostream & operator<<(ostream & saida, const Ninho & x);

@@ -5,8 +5,10 @@
 
 #include "Ninho.h"
 #include "Mundo.h"
+#include "Formiga.h"
 #include <sstream>
 #include <iostream>
+#include "Exploradora.h"
 using namespace std;
 int Ninho::sequencia=1;
 Ninho::Ninho(int xx,int yy,int e, Mundo * m):mundo(m) {
@@ -23,6 +25,19 @@ int Ninho::pesquisa(int x, int y){
             return formigas[i]->getId();
     }
     return -1;
+}
+int Ninho::verificaenergia(int ener){
+    if(energia > energia_inicial+(energia_inicial*ener/100)){
+//        energia=energia_inicial*ener/100;
+       
+    criaFormiga((energia-energia_inicial));
+}
+}
+int Ninho::criaFormiga(int ee){
+    Exploradora *e=0;
+    e= new Exploradora(x+1,y+1,this);
+    e->SetEnergia(ee);
+    formigas.push_back(e);
 }
 int Ninho::getDimMundo() const{
     return mundo->getDim();
