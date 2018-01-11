@@ -387,3 +387,12 @@ void Mundo::avanca(){
 
     
 }
+bool Mundo::inseticida(int id){
+    int aux;
+    aux=pesquisa(id);
+    if(aux==-1)
+        return false;
+    
+    ninhos.erase(ninhos.begin()+aux);
+    return true;
+}

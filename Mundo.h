@@ -39,6 +39,7 @@ public:
     void acrescentaMigalha(int e,int x, int y);
     void verificaMigalhas();
     bool acrescentaNinho(Ninho * ninho);
+    bool inseticida(int idd);
     bool acrescentaFormiga(Formiga *f,int id);
     int getDim()const{return dim;}
     int getNninhos(){return ninhos.size();};
