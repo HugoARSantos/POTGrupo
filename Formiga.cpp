@@ -58,7 +58,7 @@ void Formiga::regraComeMigalha(){
     
     int e;
     
-    e=ninho.getEnergiaMigalha(x,y,100);
+    e=ninho->getEnergiaMigalha(x,y,100);
    
     SetEnergia(e);
 
